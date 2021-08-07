@@ -44,16 +44,18 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: flase
-prismjs:
   enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
   preprocess: true
   line_number: true
   tab_replace: ''
-prism_plugin:
-  mode: 'preprocess' # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true # default false
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
