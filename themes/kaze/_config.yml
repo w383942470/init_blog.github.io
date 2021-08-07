@@ -1,10 +1,10 @@
 #------------------------
 # Header config
-title: 王富贵 · BLOG
+title: Init的博客
 author: Init
-logo_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-author_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220
-author_description: 王富贵的日常学习小结~
+logo_img: https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
+author_img: https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100
+author_description: 日常学习小结
 #------------------------
 # Navbar config
 #------------------------
@@ -13,33 +13,23 @@ menus:
   archive: /archives
   tags: /tags
   categories: /categories
-#  about: /about
+  about: /about
   friends: /links
   # artitalk: /shuoshuo # You can uncomment to add this route
 
 about:
   description: description
   social_links:
-     - { icon: iconfont society-icon icon-github, link: https://github.com/w383942470 }
-     - { icon: iconfont society-icon icon-mail, link: mailto:w383942470@163.com }
-     - { icon: iconfont society-icon icon-wechat, link: http://wpa.qq.com/msgrd?v=3&uin=383942470&site=qq&menu=yes }
+    # - { icon: icon, link: your link }
 
 #------------------------
 # Links
 #------------------------
 links:
-   QQ:
-     url:  http://wpa.qq.com/msgrd?v=3&uin=383942470&site=qq&menu=yes
-     avatar: https://gdown.baidu.com/img/0/512_512/db9d059f00be7af84d97435bcb85d568.png
-     description: 欢迎联系交流
-   微信:
-     url:
-     avatar: https://gdown.baidu.com/img/0/512_512/aaf27d029984e6d43ae57537e2dfc738.jpg
-     description: 欢迎联系交流
-   邮箱:
-     url: mailto:w383942470@163.com
-     avatar: http://gdown.baidu.com/img/0/512_512/c0589e82bc080fcb350df38c2d86df42.png
-     description: 欢迎联系交流
+  # name:
+  #   url: https://example.com
+  #   avatar:
+  #   description:
   #------------------------
   # tip: if you want to use QQ avatar without giving away your QQ number,
   # you can use this api to get an encrypted url:
@@ -56,13 +46,13 @@ toc:
   minDepth: 1
 
 copyright:
-  enable: true
+  enable: false
   writer: # if writer is empty we will use config.author as writer
   declare: 本博客所有文章除特别声明外，转载请注明出处！
   style: warning # the style uses note warning | danger | primary | info | success
 
 search:
-  enable: true
+  enable: false
   path: search.json
   field: posts
   searchContent: true
@@ -93,7 +83,7 @@ footer:
   # pv / uv statistics config
   #------------------------
   statistics:
-    enable: true
+    enable: false
     type: busuanzi # now version only supports busuanzi
     pv:
       enable: true
@@ -252,8 +242,8 @@ cdn:
   mathjax: //cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-svg.js
   katex: //cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
   gitalk:
-  css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-  js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+    css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+    js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
   valine: //unpkg.com/valine/dist/Valine.min.js
   livere: //cdn-city.livere.com/js/embed.dist.js
   waline: //cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
