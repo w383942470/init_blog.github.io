@@ -475,6 +475,7 @@ pre[class*='highlight'] {
 }
 .author-img {
   transition: all 0.5s;
+  border-radius: 50%;
 }
 .author-name {
   margin-top: 0.7rem;
@@ -957,6 +958,7 @@ pre[class*='highlight'] {
 }
 .navbar-logo-img {
   margin-right: 10px;
+  border-radius: 50%;
 }
 .navbar-menu {
   font-size: 1rem;
