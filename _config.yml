@@ -104,5 +104,5 @@ theme: kaze
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/w383942470/init_blog.github.io.git
+  repository: https://github.com/w383942470/w383942470.github.io.git
   branch: master
