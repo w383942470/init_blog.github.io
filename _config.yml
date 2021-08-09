@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Init的个人博客
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Init
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://w383942470.github.io
-root: /init_blog.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -104,5 +104,5 @@ theme: kaze
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://w383942470.github.io/init_blog.github.io/
+  repo: git@github.com:w383942470/w383942470.github.io.git
   branch: master
