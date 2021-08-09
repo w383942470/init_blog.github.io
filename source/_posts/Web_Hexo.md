@@ -25,7 +25,6 @@ git --version
 [root@VM_0_5_centos /]# git --version
 git version 2.27.GIT
 ```
-![检查git版本](Web_Hexo/git_version.png)
 ##### 1.2 安装Git
 如果出现的提示是Not Find那就进行以下命令进行安装吧
 ``` bash
@@ -37,7 +36,6 @@ yum -y install git
 [root@VM_0_5_centos /]# git --version
 git version 2.27.GIT
 ```
-![检查git版本](Web_Hexo/git_version.png)
 {% note warning %}
 提示：yum安装git被安装在/usr/libexec/git-core目录下
 {% endnote %}
