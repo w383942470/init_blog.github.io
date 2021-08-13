@@ -32,3 +32,12 @@ https://webkit.org/blog/6900/webdriver-support-in-safari-10/
 ``` python
 from selenium import webdriver
 ```
+{% codeblock [python] [lang:python] [url] [link text] [additional options] %}
+from selenium import webdriver
+{% endcodeblock %}
+{% code [python] [lang:python] [url] [link text] [additional options] %}
+from selenium import webdriver
+{% endcode %}
+<pre>
+  <code class="yaml">hello: hexo</code>
+</pre>
