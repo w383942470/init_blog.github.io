@@ -287,7 +287,7 @@
     
     
       <span class="dot"></span>
-      <span>596 字</span>
+      <span>623 字</span>
     
   </div>
   
@@ -323,7 +323,7 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h2><h3 id="一、新文章创建命令"><a href="#一、新文章创建命令" class="headerlink" title="一、新文章创建命令"></a>一、新文章创建命令</h3><pre class="highlight"><span class="line">hexo new &lt;模板名称&gt; &lt;文件名称&gt;</span><br></pre>
+    <h2 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h2><h3 id="一、新文章创建命令"><a href="#一、新文章创建命令" class="headerlink" title="一、新文章创建命令"></a>一、新文章创建命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new &lt;模板名称&gt; &lt;文件名称&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="二、模板名称简介"><a href="#二、模板名称简介" class="headerlink" title="二、模板名称简介"></a>二、模板名称简介</h3><table>
 <thead>
 <tr>
@@ -372,22 +372,38 @@
 </tr>
 </tbody></table>
 <h3 id="二、基本语法"><a href="#二、基本语法" class="headerlink" title="二、基本语法"></a>二、基本语法</h3><h4 id="1-什么是Markdown？"><a href="#1-什么是Markdown？" class="headerlink" title="1.什么是Markdown？"></a>1.什么是Markdown？</h4><div class="post-note note-info"><p>Markdown 是一种可以使用普通文本编辑器编写的 标记语言，通过简单的 标记语法，它可以使普通文本内容具有一定的格式。</p></div>
-<h4 id="2-Markdown基本语法"><a href="#2-Markdown基本语法" class="headerlink" title="2.Markdown基本语法"></a>2.Markdown基本语法</h4><h5 id="1-标题。一共支持六级"><a href="#1-标题。一共支持六级" class="headerlink" title="1.标题。一共支持六级"></a>1.标题。一共支持六级</h5><pre class="highlight"><span class="line"><span class="comment"># //一级标题</span></span><br><span class="line"><span class="comment">## //二级标题</span></span><br><span class="line"><span class="comment">### //三级标题</span></span><br><span class="line"><span class="comment">#### //四级标题</span></span><br><span class="line"><span class="comment">##### //五级标题</span></span><br><span class="line"><span class="comment">###### //六级标题</span></span><br></pre>
-<h5 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h5><pre class="highlight"><span class="line">*斜体* //左右分别用一个*号包起来</span><br><span class="line">**加粗** //左右分别用两个*号包起来</span><br><span class="line">***斜体加粗*** //左右分别用三个*号包起来</span><br><span class="line">~~删除线~~ //左右分别用两个~~号包起来</span><br></pre>
+<h4 id="2-Markdown基本语法"><a href="#2-Markdown基本语法" class="headerlink" title="2.Markdown基本语法"></a>2.Markdown基本语法</h4><h5 id="1-标题。一共支持六级"><a href="#1-标题。一共支持六级" class="headerlink" title="1.标题。一共支持六级"></a>1.标题。一共支持六级</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># &#x2F;&#x2F;一级标题
+## &#x2F;&#x2F;二级标题
+### &#x2F;&#x2F;三级标题
+#### &#x2F;&#x2F;四级标题
+##### &#x2F;&#x2F;五级标题
+###### &#x2F;&#x2F;六级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">*斜体* &#x2F;&#x2F;左右分别用一个*号包起来
+**加粗** &#x2F;&#x2F;左右分别用两个*号包起来
+***斜体加粗*** &#x2F;&#x2F;左右分别用三个*号包起来
+~~删除线~~ &#x2F;&#x2F;左右分别用两个~~号包起来<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h5><p>在引用的文字前加上”&gt;”即可</p>
-<pre class="highlight"><span class="line">&gt; 这是引用的内容</span><br><span class="line">&gt;&gt; 这是引用的内容</span><br><span class="line">&gt;&gt;&gt; 这是引用的内容</span><br></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&gt; 这是引用的内容
+&gt;&gt; 这是引用的内容
+&gt;&gt;&gt; 这是引用的内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h5><p>三个或者三个以上的 - 或者 * 都可以。</p>
-<pre class="highlight"><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+----
+***
+*****<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="5-图片"><a href="#5-图片" class="headerlink" title="5.图片"></a>5.图片</h5><p>如果要在本地上传图片，那首先得安装图片插件</p>
-<pre class="highlight"><span class="line">npm install hexo-asset-image --save</span><br></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安装完成后再新建一个文章，此时我们会发现在_posts文件夹下出现了一个与文件名称相同的文件夹</p>
-<pre class="highlight"><span class="line">hexo new post article</span><br></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new post article<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>接下来我们将需要用到的图片放入对应的文件夹中，并在需要显示图片的地方输入以下内容即可</p>
-<pre class="highlight"><span class="line">![这是一张图片](article/img.png) //![图片描述](图片路径) </span><br></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">![这是一张图片](article&#x2F;img.png) &#x2F;&#x2F;![图片描述](图片路径) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <div class="post-note note-warning"><p>提示：注意文件夹名称必须与文件名称一致</p></div>
 
-<h5 id="6-表格"><a href="#6-表格" class="headerlink" title="6.表格"></a>6.表格</h5><pre class="highlight"><span class="line">|标题|标题|</span><br><span class="line">|---|---|</span><br><span class="line">|内容|内容|</span><br><span class="line">|内容|内容|</span><br></pre>
-<h5 id="7-超链接"><a href="#7-超链接" class="headerlink" title="7.超链接"></a>7.超链接</h5><pre class="highlight"><span class="line">[打开百度](http://www.baidu.com, <span class="string">&quot;这是百度链接&quot;</span>) //[链接文字](链接地址 <span class="string">&quot;链接描述&quot;</span>)</span><br></pre>
+<h5 id="6-表格"><a href="#6-表格" class="headerlink" title="6.表格"></a>6.表格</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">|标题|标题|
+|---|---|
+|内容|内容|
+|内容|内容|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-超链接"><a href="#7-超链接" class="headerlink" title="7.超链接"></a>7.超链接</h5><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[打开百度](http:&#x2F;&#x2F;www.baidu.com, &quot;这是百度链接&quot;) &#x2F;&#x2F;[链接文字](链接地址 &quot;链接描述&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
   </div>
   <div>
     
@@ -542,13 +558,6 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-        <div class="categories-list-item">
-          服务器
-          <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
       <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
         <div class="categories-list-item">
           WEB前端
@@ -560,6 +569,13 @@
         <div class="categories-list-item">
           自动化测试
           <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        <div class="categories-list-item">
+          服务器
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -578,6 +594,12 @@
   <div class="tags-list">
     
       <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
         href="/tags/%E5%8D%9A%E5%AE%A2/" 
         title="博客">
         <div class="tags-list-item">博客</div>
@@ -590,9 +612,15 @@
       </a>
     
       <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
+        href="/tags/%E9%83%A8%E7%BD%B2/" 
+        title="部署">
+        <div class="tags-list-item">部署</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
+        title="定时任务">
+        <div class="tags-list-item">定时任务</div>
       </a>
     
       <a 
@@ -605,18 +633,6 @@
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
-      </a>
-    
-      <a 
-        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
-        title="定时任务">
-        <div class="tags-list-item">定时任务</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%83%A8%E7%BD%B2/" 
-        title="部署">
-        <div class="tags-list-item">部署</div>
       </a>
     
   </div>
