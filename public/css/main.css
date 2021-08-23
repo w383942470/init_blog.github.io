@@ -957,6 +957,7 @@ pre[class*='highlight'] {
   font-size: 1.3rem;
 }
 .navbar-logo-img {
+  border-radius: 50%;
   margin-right: 10px;
 }
 .navbar-menu {
