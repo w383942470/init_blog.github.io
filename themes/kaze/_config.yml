@@ -2,8 +2,8 @@
 # Header config
 title: 王富贵 · BLOG
 author: Init
-logo_img: http://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-author_img: http://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220
+logo_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
+author_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220
 author_description: 王富贵的日常学习小结~
 #------------------------
 # Navbar config
