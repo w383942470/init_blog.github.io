@@ -17,7 +17,7 @@
     content="王富贵 · BLOG">
   <link 
     rel="icon" 
-    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    href="http://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
   <title>标签</title>
   
     
@@ -33,7 +33,7 @@
     
       <meta 
         property="og:img" 
-        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+        content="http://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
     
     
     
@@ -103,15 +103,18 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
       }
     };
     setDarkmode();
@@ -140,7 +143,7 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-twilight.css" type="text/css">
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
   <body>
@@ -154,7 +157,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          src="http://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -195,18 +198,10 @@
       </a>
     
       <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
         href="/links" 
         class="navbar-menu-item">
         
-          联系
+          友链
         
       </a>
     
@@ -248,7 +243,7 @@
     标签
   </div>
   <div>
-    共计&nbsp;8&nbsp;个标签
+    共计&nbsp;7&nbsp;个标签
   </div>
 </div>
 <div class="card card-content">
@@ -271,12 +266,6 @@
           href="/tags/Hexo/" 
           title="Hexo">
           <div class="tags-list-item">Hexo</div>
-        </a>
-      
-        <a 
-          href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
-          title="测试文档">
-          <div class="tags-list-item">测试文档</div>
         </a>
       
         <a 
@@ -312,7 +301,7 @@
               <div class="card card-author">
                 
   <img 
-    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    src="http://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
     class="author-img"
     width="88"
     height="88"
@@ -324,19 +313,19 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>6</span>
+    <span>5</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>4</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>8</span>
+    <span>7</span>
     <span>标签</span>
   </a>
 </div>
@@ -399,13 +388,6 @@
         </div>
       </a>
     
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
   </div>
 </div>
   </article>
@@ -436,12 +418,6 @@
         href="/tags/Hexo/" 
         title="Hexo">
         <div class="tags-list-item">Hexo</div>
-      </a>
-    
-      <a 
-        href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
-        title="测试文档">
-        <div class="tags-list-item">测试文档</div>
       </a>
     
       <a 
@@ -507,16 +483,12 @@
         
       
     
-      
-        
-      
-    
     
       <a 
         href="/archives/2021" 
         class="archive-card-list-item">
         2021
-        <span class="archive-card-list-item-badge">6</span>
+        <span class="archive-card-list-item-badge">5</span>
       </a>
     
   </div>
@@ -541,11 +513,6 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-25</div>
-        <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-13</div>
         <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
       </div>
@@ -558,6 +525,11 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-11</div>
         <a href="/2021/08/11/Hexo_Article/"><div class="recent-posts-item-content">Hexo博客新建文章</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-09</div>
+        <a href="/2021/08/09/Web_Hexo/"><div class="recent-posts-item-content">如何搭建Hexo博客并部署到GitHub</div></a>
       </div>
     
   </div>
@@ -599,16 +571,12 @@
         
       
     
-      
-        
-      
-    
     
       <a 
         href="/archives/2021" 
         class="archive-card-list-item">
         2021
-        <span class="archive-card-list-item-badge">6</span>
+        <span class="archive-card-list-item-badge">5</span>
       </a>
     
   </div>
@@ -754,7 +722,7 @@
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>
