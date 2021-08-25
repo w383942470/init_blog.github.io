@@ -631,10 +631,10 @@ pre[class*='highlight'] {
 }
 .post-title,
 .card-excerpt {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.65rem
 }
 .post-title {
-  font-size: 1.85rem;
+  font-size: 1.45rem;
   font-weight: 500;
   margin: 0.5rem 0;
   padding-bottom: 0.4rem;
