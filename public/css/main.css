@@ -1528,6 +1528,7 @@ mjx-container svg:focus {
   width: 150px;
   height: 150px;
   margin-right: 90px;
+  border-radius: 50%;
 }
 .about-card-content {
   display: flex;
