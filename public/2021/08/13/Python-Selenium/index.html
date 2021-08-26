@@ -235,7 +235,7 @@
         href="/links" 
         class="navbar-menu-item">
         
-          友链
+          联系
         
       </a>
     
@@ -295,7 +295,7 @@
     
     
       <span class="dot"></span>
-      <span>452 字</span>
+      <span>293 字</span>
     
   </div>
   
@@ -340,52 +340,7 @@
 <p>Safari的web driver</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;webkit.org&#x2F;blog&#x2F;6900&#x2F;webdriver-support-in-safari-10&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <div class="post-note note-primary"><p>下载完成后，将解压出来的exe文件与py文件放置同一个目录下。</p></div>
-<h2 id="三、示例"><a href="#三、示例" class="headerlink" title="三、示例"></a>三、示例</h2><h3 id="1-引入Selenium包，并调起浏览器"><a href="#1-引入Selenium包，并调起浏览器" class="headerlink" title="1. 引入Selenium包，并调起浏览器"></a>1. 引入Selenium包，并调起浏览器</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">print(&#39;widjwo&#39;)
-if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
-    def init():
-        print(123)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">from Reptile<span class="token punctuation">.</span>main_common<span class="token punctuation">.</span>common <span class="token keyword">import</span> Main_Request<span class="token punctuation">,</span> DB_Mysql<span class="token punctuation">,</span> Main_Common
-from config <span class="token keyword">import</span> headers
-
-request <span class="token operator">=</span> <span class="token function">Main_Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-db_mysql <span class="token operator">=</span> <span class="token function">DB_Mysql</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-common <span class="token operator">=</span> <span class="token function">Main_Common</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-url <span class="token operator">=</span> <span class="token string">'https://www.binancezh.io'</span>
-
-
-def <span class="token function">get_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'币安爬取开始，当前时间:'</span><span class="token operator">+</span>common<span class="token punctuation">.</span><span class="token function">localtime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    news_url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token string">'/zh-CN/support/announcement/c-48?navId=48#/48'</span>
-    <span class="token keyword">try</span><span class="token operator">:</span>
-        res <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">request_get</span><span class="token punctuation">(</span>news_url<span class="token punctuation">,</span> headers<span class="token punctuation">)</span>
-        page_html <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">analysis_html</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
-        html_class <span class="token operator">=</span> page_html<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span>attrs<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">'class'</span><span class="token operator">:</span> <span class="token string">'css-1ej4hfo'</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> html_class<span class="token operator">:</span>
-            content_link <span class="token operator">=</span> i<span class="token punctuation">[</span><span class="token string">'href'</span><span class="token punctuation">]</span>
-            title <span class="token operator">=</span> i<span class="token punctuation">.</span>text
-            db_mysql<span class="token punctuation">.</span><span class="token function">set_sql_link</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> <span class="token string">'zh'</span><span class="token punctuation">,</span> url<span class="token operator">+</span>content_link<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
-    except<span class="token operator">:</span>
-        pass
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'币安爬取结束，当前时间:'</span><span class="token operator">+</span>common<span class="token punctuation">.</span><span class="token function">localtime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token operator">:</span>
-    <span class="token function">get_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre>
-  <code>from selenium import webdriver</code>
-</pre>
-<pre class="line-numbers language-none"><div class="caption"><span>[title] [lang:language] [url] [link text] [additional options]</span></div><code class="language-none">from selenium import webdriver<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>	
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>	
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h2 id="三、示例"><a href="#三、示例" class="headerlink" title="三、示例"></a>三、示例</h2><h3 id="1-引入Selenium包，并调起浏览器"><a href="#1-引入Selenium包，并调起浏览器" class="headerlink" title="1. 引入Selenium包，并调起浏览器"></a>1. 引入Selenium包，并调起浏览器</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">from selenium <span class="token keyword">import</span> webdriver<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
   </div>
   <div>
     
