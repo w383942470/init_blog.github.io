@@ -29,12 +29,6 @@ https://webkit.org/blog/6900/webdriver-support-in-safari-10/
 {% endnote %}
 ## 三、示例
 ### 1. 引入Selenium包，并调起浏览器
-``` python
+``` javascript
 from selenium import webdriver
 ```
-<pre>
-  <code >from selenium import webdriver</code>
-</pre>
-{% codeblock [title] [lang:language] [url] [link text] [additional options] %}
-from selenium import webdriver
-{% endcodeblock %}
