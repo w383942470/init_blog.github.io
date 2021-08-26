@@ -31,15 +31,15 @@ links:
    QQ:
      url:  http://wpa.qq.com/msgrd?v=3&uin=383942470&site=qq&menu=yes
      avatar: https://gdown.baidu.com/img/0/512_512/db9d059f00be7af84d97435bcb85d568.png
-     description: 欢迎联系交流
+     description: QQ：383942470
    微信:
      url:
      avatar: https://gdown.baidu.com/img/0/512_512/aaf27d029984e6d43ae57537e2dfc738.jpg
-     description: 欢迎联系交流
+     description: 微信：wy999999987
    邮箱:
      url: mailto:w383942470@163.com
      avatar: http://gdown.baidu.com/img/0/512_512/c0589e82bc080fcb350df38c2d86df42.png
-     description: 欢迎联系交流
+     description: 邮箱：383942470@qq.com
   #------------------------
   # tip: if you want to use QQ avatar without giving away your QQ number,
   # you can use this api to get an encrypted url:
@@ -263,3 +263,4 @@ cdn:
   busuanzi: /js/lib/busuanzi.min.js
   artitalk: https://cdn.jsdelivr.net/npm/artitalk
   md5: /js/lib/md5.min.js
+
