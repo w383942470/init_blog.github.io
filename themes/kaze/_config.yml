@@ -63,7 +63,7 @@ copyright:
 
 search:
   enable: true
-  path: search.json
+  path: ../../../../search.json
   field: posts
   searchContent: true
 

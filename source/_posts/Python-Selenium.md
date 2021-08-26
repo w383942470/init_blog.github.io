@@ -32,3 +32,9 @@ https://webkit.org/blog/6900/webdriver-support-in-safari-10/
 ``` python
 from selenium import webdriver
 ```
+<pre>
+  <code >from selenium import webdriver</code>
+</pre>
+{% codeblock [title] [lang:language] [url] [link text] [additional options] %}
+from selenium import webdriver
+{% endcodeblock %}
