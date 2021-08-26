@@ -477,9 +477,6 @@ pre[class*='highlight'] {
   transition: all 0.5s;
   border-radius: 50%;
 }
-.author-radius{
-  border-radius: 50%;
-}
 .author-name {
   margin-top: 0.7rem;
   font-size: 1.5rem;
@@ -915,7 +912,8 @@ pre[class*='highlight'] {
   max-height: 24.8px;
 }
 .friend-dsc {
-  max-width: 100%;
+  /*max-width: 100%;*/
+  width: 120%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -958,12 +956,11 @@ pre[class*='highlight'] {
 }
 .navbar-logo-dsc {
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight:bold;
 }
 .navbar-logo-img {
   border-radius: 50%;
   margin-right: 10px;
-  border-radius: 50%;
 }
 .navbar-menu {
   font-size: 1rem;
