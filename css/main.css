@@ -961,6 +961,10 @@ pre[class*='highlight'] {
 .navbar-logo-img {
   border-radius: 50%;
   margin-right: 10px;
+<<<<<<< HEAD
+=======
+  border-radius: 50%;
+>>>>>>> origin
 }
 .navbar-menu {
   font-size: 1rem;
