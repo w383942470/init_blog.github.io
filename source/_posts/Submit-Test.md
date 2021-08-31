@@ -32,4 +32,3 @@ categories: 测试相关
 =======
 ### <font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font>
 ![添加微信](Submit-Test/WX_QR_code.png)
->>>>>>> develop
