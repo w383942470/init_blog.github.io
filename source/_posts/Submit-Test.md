@@ -2,7 +2,7 @@
 title: 软件测试质量保障之开发提测
 date: 2021-08-25 11:34:41
 tags: [测试文档]
-categories: 测试文档
+categories: 测试相关
 ---
 ## 1.什么是提测 ？
 “提测”即提交测试人员进行系统性的测试。进入到该流程说明开发人员对于模块的编写实现以及接口的完成是完全按照产品、设计师提供的prd以及设计图实现，然后测试人员开始测试的一个流程。
@@ -27,5 +27,9 @@ categories: 测试文档
 #### <font color="#00FF00;">1，提测<font color="blue">XX</font>功能，起到了<font color="blue">XX</font>的效果</font>
 #### <font color="#00FF00;">2，测试类型为功能测试和接口测试(如有接口测试)</font>
 #### <font color="#00FF00;">3，测试类型为功能测试</font>
+<<<<<<< HEAD
+### <font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font>
+=======
 ### <font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font>
 ![添加微信](Submit-Test/WX_QR_code.png)
+>>>>>>> develop
