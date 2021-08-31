@@ -27,8 +27,6 @@ categories: 测试相关
 #### <font color="#00FF00;">1，提测<font color="blue">XX</font>功能，起到了<font color="blue">XX</font>的效果</font>
 #### <font color="#00FF00;">2，测试类型为功能测试和接口测试(如有接口测试)</font>
 #### <font color="#00FF00;">3，测试类型为功能测试</font>
-<<<<<<< HEAD
 ### <font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font>
-=======
 ### <font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font>
 ![添加微信](Submit-Test/WX_QR_code.png)
