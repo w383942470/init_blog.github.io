@@ -95,3 +95,4 @@ hexo new post article
 ``` bash
 [打开百度](http://www.baidu.com, "这是百度链接") //[链接文字](链接地址 "链接描述")
 ```
+![添加微信](Hexo_Article/WX_QR_code.png)

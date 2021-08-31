@@ -181,3 +181,4 @@ hexo d //部署
 进入刚刚创建的仓库中，打开Setting-Pages，选择需要部署的分支以及读取的根目录，点击save后，页面将会将部署后可访问的域名展示出来，直接访问即可
 {% endnote %}
 
+![添加微信](Web_Hexo/WX_QR_code.png)

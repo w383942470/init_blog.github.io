@@ -94,3 +94,4 @@ Ctrl+a p
 
 #### 3.5 在第0个窗口和第9个窗口之间切换
 Ctrl+a 0-9
+![添加微信](Server_Screen/WX_QR_code.png)
