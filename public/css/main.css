@@ -628,7 +628,7 @@ pre[class*='highlight'] {
 }
 .post-title,
 .card-excerpt {
-  margin-bottom: 0.65rem
+  margin-bottom: 0.65rem;
 }
 .post-title {
   font-size: 1.45rem;
@@ -672,7 +672,7 @@ pre[class*='highlight'] {
 .categories-list-item {
   color: var(--text-color);
   padding: 6px 8px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   transition: all 0.4s;
 }
 .categories-list-item:hover {
@@ -912,7 +912,6 @@ pre[class*='highlight'] {
   max-height: 24.8px;
 }
 .friend-dsc {
-  /*max-width: 100%;*/
   width: 120%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -956,15 +955,11 @@ pre[class*='highlight'] {
 }
 .navbar-logo-dsc {
   font-size: 1.3rem;
-  font-weight:bold;
+  font-weight: bold;
 }
 .navbar-logo-img {
-  border-radius: 50%;
   margin-right: 10px;
-<<<<<<< HEAD
-=======
   border-radius: 50%;
->>>>>>> origin
 }
 .navbar-menu {
   font-size: 1rem;
