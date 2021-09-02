@@ -14,7 +14,7 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="王富贵 · BLOG">
+    content="Init的个人博客">
   <link 
     rel="icon" 
     href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
@@ -28,7 +28,7 @@
     
       <meta 
         property="og:url" 
-        content="https://w383942470.github.io/2021/08/09/Web_Hexo/index.html">
+        content="https://w383942470.github.io/2021/08/12/Web_Hexo/index.html">
     
     
       <meta 
@@ -42,10 +42,10 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2021-08-09">
+        content="2021-08-12">
       <meta 
         property="og:article:modified_time" 
-        content="2021-08-11">
+        content="2021-09-02">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -127,18 +127,15 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-        prismThemeChange();
       }
     };
     setDarkmode();
@@ -169,8 +166,7 @@
   
     <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
@@ -224,22 +220,10 @@
       </a>
     
       <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
         href="/links" 
         class="navbar-menu-item">
         
-<<<<<<< HEAD
-          友链
-=======
           联系
->>>>>>> origin
         
       </a>
     
@@ -280,12 +264,12 @@
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2021-08-09T09:37:43.468Z">
+    <time datetime="2021-08-12T01:35:21.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2021-08-09</span>
+      <span>2021-08-12</span>
     </time>
     
       <span class="dot"></span>
@@ -342,13 +326,13 @@
 <p>如果出现以下提示直接下一步：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@VM_0_5_centos &#x2F;]# git --version
 git version 2.27.GIT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="/2021/08/09/Web_Hexo/git_version.png" alt="检查git版本" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/09/Web_Hexo/git_version.png" class="lozad post-image"></p>
+<p><img src="Web_Hexo/git_version.png" alt="检查git版本" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Web_Hexo/git_version.png" class="lozad post-image"></p>
 <h5 id="1-2-安装Git"><a href="#1-2-安装Git" class="headerlink" title="1.2 安装Git"></a>1.2 安装Git</h5><p>如果出现的提示是Not Find那就进行以下命令进行安装吧</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum -y install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h5 id="1-3-检查Git版本"><a href="#1-3-检查Git版本" class="headerlink" title="1.3 检查Git版本"></a>1.3 检查Git版本</h5><p>安装完成后输入命令查看Git版本：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">[root@VM_0_5_centos &#x2F;]# git --version
 git version 2.27.GIT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="/2021/08/09/Web_Hexo/git_version.png" alt="检查git版本" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/09/Web_Hexo/git_version.png" class="lozad post-image"></p>
+<p><img src="Web_Hexo/git_version.png" alt="检查git版本" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Web_Hexo/git_version.png" class="lozad post-image"></p>
 <div class="post-note note-warning"><p>提示：yum安装git被安装在/usr/libexec/git-core目录下</p></div>
 
 <h4 id="2-安装Nodejs"><a href="#2-安装Nodejs" class="headerlink" title="2.安装Nodejs"></a>2.安装Nodejs</h4><p>Windows：</p>
@@ -405,7 +389,7 @@ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 hexo g &#x2F;&#x2F;生成静态文件
 hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h5 id="2-4-GitHub中配置GitHub-Pages"><a href="#2-4-GitHub中配置GitHub-Pages" class="headerlink" title="2.4 GitHub中配置GitHub Pages"></a>2.4 GitHub中配置GitHub Pages</h5><div class="post-note note-success"><p>进入刚刚创建的仓库中，打开Setting-Pages，选择需要部署的分支以及读取的根目录，点击save后，页面将会将部署后可访问的域名展示出来，直接访问即可</p></div>
-
+<p><img src="Web_Hexo/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Web_Hexo/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -425,8 +409,8 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="https://w383942470.github.io/2021/08/09/Web_Hexo/">
-            https://w383942470.github.io/2021/08/09/Web_Hexo/
+            href="https://w383942470.github.io/2021/08/12/Web_Hexo/">
+            https://w383942470.github.io/2021/08/12/Web_Hexo/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，转载请注明出处！</p>
@@ -438,13 +422,13 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
   
     <div class="nav-item-prev">
       <a 
-        href="/2021/08/11/Hexo_Article/" 
+        href="/2021/08/12/Linux-Crontab/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">Hexo博客新建文章 </div>
+            <div class="nav-title">Linux中的定时任务(crontab) </div>
           
         </div>
       </a>
@@ -453,12 +437,12 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
   
     <div class="nav-item-next">
       <a 
-        href="/2021/08/06/Server_Screen/" 
+        href="/2021/08/11/Hexo_Article/" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">Screen的使用方法 </div>
+            <div class="nav-title">Hexo博客新建文章 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -495,19 +479,19 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>6</span>
+    <span>7</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>4</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>8</span>
+    <span>11</span>
     <span>标签</span>
   </a>
 </div>
@@ -561,6 +545,13 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
   </div>
   <div class="categories-list">
     
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
+        <div class="categories-list-item">
+          测试相关
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
       <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
         <div class="categories-list-item">
           WEB前端
@@ -568,24 +559,10 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
         </div>
       </a>
     
-      <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
-        <div class="categories-list-item">
-          自动化测试
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
       <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
         <div class="categories-list-item">
           服务器
           <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
-          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -634,9 +611,9 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
       </a>
     
       <a 
-        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
-        title="定时任务">
-        <div class="tags-list-item">定时任务</div>
+        href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
+        title="自动化测试">
+        <div class="tags-list-item">自动化测试</div>
       </a>
     
       <a 
@@ -649,6 +626,24 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
+        title="定时任务">
+        <div class="tags-list-item">定时任务</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+        title="测试工具">
+        <div class="tags-list-item">测试工具</div>
+      </a>
+    
+      <a 
+        href="/tags/Fiddler/" 
+        title="Fiddler">
+        <div class="tags-list-item">Fiddler</div>
       </a>
     
   </div>
@@ -684,6 +679,11 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-30</div>
+        <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-25</div>
         <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
       </div>
@@ -696,11 +696,6 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-12</div>
         <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-11</div>
-        <a href="/2021/08/11/Hexo_Article/"><div class="recent-posts-item-content">Hexo博客新建文章</div></a>
       </div>
     
   </div>
@@ -877,7 +872,7 @@ hexo d &#x2F;&#x2F;部署<span aria-hidden="true" class="line-numbers-rows"><spa
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>

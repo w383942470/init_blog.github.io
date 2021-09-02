@@ -4,7 +4,6 @@ date: 2021-08-06 16:36:27
 tags: [Linux, 部署]
 categories: 服务器
 ---
-![图片](images/server_screen/img.png)
 ## 为什么要使用screen命令
 VPS侦探在刚接触Linux时最怕的就是SSH远程登录Linux VPS编译安装程序时（比如安装lnmp）网络突然断开，或者其他情况导致不得不与远程SSH服务器链接断开，远程执行的命令也被迫停止，只能重新连接，重新运行。相信现在有些VPSer也遇到过这个问题，今天就给VPSer们介绍一款远程会话管理工具 - screen命令。
 ## 一、screen命令是什么？

@@ -14,10 +14,10 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="Hexo">
+    content="Init的个人博客">
   <link 
     rel="icon" 
-    href="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
+    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
   <title>标签</title>
   
     
@@ -28,12 +28,12 @@
     
       <meta 
         property="og:url" 
-        content="http://example.com/tags/%E5%8D%9A%E5%AE%A2/index.html">
+        content="https://w383942470.github.io/tags/%E5%8D%9A%E5%AE%A2/index.html">
     
     
       <meta 
         property="og:img" 
-        content="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
+        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
     
     
     
@@ -103,18 +103,15 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-        prismThemeChange();
       }
     };
     setDarkmode();
@@ -143,8 +140,7 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
@@ -157,7 +153,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-          src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
+          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -282,7 +278,7 @@
               <div class="card card-author">
                 
   <img 
-    src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
+    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
     class="author-img"
     width="88"
     height="88"
@@ -408,6 +404,12 @@
       </a>
     
       <a 
+        href="/tags/%E9%83%A8%E7%BD%B2/" 
+        title="部署">
+        <div class="tags-list-item">部署</div>
+      </a>
+    
+      <a 
         href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
         title="自动化测试">
         <div class="tags-list-item">自动化测试</div>
@@ -423,12 +425,6 @@
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%83%A8%E7%BD%B2/" 
-        title="部署">
-        <div class="tags-list-item">部署</div>
       </a>
     
       <a 
