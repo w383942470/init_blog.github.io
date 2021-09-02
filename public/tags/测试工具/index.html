@@ -14,7 +14,7 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="Hexo">
+    content="Init的个人博客">
   <link 
     rel="icon" 
     href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
@@ -28,7 +28,7 @@
     
       <meta 
         property="og:url" 
-        content="http://example.com/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/index.html">
+        content="https://w383942470.github.io/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/index.html">
     
     
       <meta 
@@ -103,18 +103,15 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-        prismThemeChange();
       }
     };
     setDarkmode();
@@ -143,8 +140,7 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
