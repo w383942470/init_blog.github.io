@@ -113,6 +113,6 @@ if (m_SimulateModem) {
 ```
 ### 五、小节
 {% note success %}
-如果上述操作没有抓到包，建议尝试手动导入导出证书后再试。最后附上官方文档，如有其它功能需求可[查看官方文档~](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)
+如果上述操作没有抓到包，建议尝试手动导入导出证书后再试。最后附上官方文档，如有其它功能需求可以[查看官方文档~](https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler)
 {% endnote %}
 ![添加微信](Fiddler-Proxy/WX_QR_code.png)
