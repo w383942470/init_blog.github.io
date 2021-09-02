@@ -14,10 +14,10 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="王富贵 · BLOG">
+    content="Hexo">
   <link 
     rel="icon" 
-    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    href="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
   <title>Linux中的定时任务(crontab)</title>
   
     
@@ -28,12 +28,12 @@
     
       <meta 
         property="og:url" 
-        content="https://w383942470.github.io/2021/08/12/Linux-Crontab/index.html">
+        content="http://example.com/2021/08/12/Linux-Crontab/index.html">
     
     
       <meta 
         property="og:img" 
-        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+        content="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
     
     
     
@@ -45,7 +45,7 @@
         content="2021-08-12">
       <meta 
         property="og:article:modified_time" 
-        content="2021-09-01">
+        content="2021-09-02">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -183,7 +183,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -220,14 +220,6 @@
         class="navbar-menu-item">
         
           分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
         
       </a>
     
@@ -331,10 +323,10 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="一、什么是Crontab？"><a href="#一、什么是Crontab？" class="headerlink" title="一、什么是Crontab？"></a>一、什么是Crontab？</h2><p><font color="red">cron</font> 是一个Linux定时执行工具，可以在无需人工干预的情况下运行作业。 在服务器中，<font color="red">cron</font> 是被默认安装并启动的。</p>
+    <h2 id="一、什么是Crontab？"><a href="#一、什么是Crontab？" class="headerlink" title="一、什么是Crontab？"></a>一、什么是Crontab？</h2><p><font color=red>cron</font> 是一个Linux定时执行工具，可以在无需人工干预的情况下运行作业。 在服务器中，<font color=red>cron</font> 是被默认安装并启动的。</p>
 <h2 id="二、为什么我们要使用Crontab？"><a href="#二、为什么我们要使用Crontab？" class="headerlink" title="二、为什么我们要使用Crontab？"></a>二、为什么我们要使用Crontab？</h2><p>在日常服务器项目运行过程中，我们避免不了的需要在固定的时间去执行固定的任务。如果每次都需要手动执行程序去完成任务，那实在是太累了，此时就可以用到crontab来代替我们人工去触发执行这些任务。</p>
 <h2 id="三、如何使用Crontab？"><a href="#三、如何使用Crontab？" class="headerlink" title="三、如何使用Crontab？"></a>三、如何使用Crontab？</h2><h3 id="1-查看Crontab的工作表"><a href="#1-查看Crontab的工作表" class="headerlink" title="1. 查看Crontab的工作表"></a>1. 查看Crontab的工作表</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">crontab -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/2021/08/12/Linux-Crontab/crontab_sel.png" alt="查看工作表" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/12/Linux-Crontab/crontab_sel.png" class="lozad post-image"></p>
+<p><img src="Linux-Crontab/crontab_sel.png" alt="查看工作表" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Linux-Crontab/crontab_sel.png" class="lozad post-image"></p>
 <h3 id="2-编辑Crontab工作表"><a href="#2-编辑Crontab工作表" class="headerlink" title="2. 编辑Crontab工作表"></a>2. 编辑Crontab工作表</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">crontab -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <div class="post-note note-primary"><p>进入编辑页之后，输入”a”进入编辑模式。编辑完成之后，ctrl+c保存，输入”:”，再输入”wq”加回车退出编辑模式。</p></div>
 <h3 id="3-删除Crontab工作表中的工作"><a href="#3-删除Crontab工作表中的工作" class="headerlink" title="3. 删除Crontab工作表中的工作"></a>3. 删除Crontab工作表中的工作</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">crontab -r<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -354,7 +346,7 @@
 <h4 id="5-3-每天上午8-9点的5和30分钟执行一次”mian-py”文件"><a href="#5-3-每天上午8-9点的5和30分钟执行一次”mian-py”文件" class="headerlink" title="5.3 每天上午8~9点的5和30分钟执行一次”mian.py”文件"></a>5.3 每天上午8~9点的5和30分钟执行一次”mian.py”文件</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">15,30 8-9 * * * python main.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="5-4-每隔三天上午8-9点的5和30分钟执行一次”mian-py”文件"><a href="#5-4-每隔三天上午8-9点的5和30分钟执行一次”mian-py”文件" class="headerlink" title="5.4 每隔三天上午8~9点的5和30分钟执行一次”mian.py”文件"></a>5.4 每隔三天上午8~9点的5和30分钟执行一次”mian.py”文件</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">15,30 8-9 *&#x2F;3 * * python main.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="5-5-每周三上午8-9点的5和30分钟执行一次”mian-py”文件"><a href="#5-5-每周三上午8-9点的5和30分钟执行一次”mian-py”文件" class="headerlink" title="5.5 每周三上午8~9点的5和30分钟执行一次”mian.py”文件"></a>5.5 每周三上午8~9点的5和30分钟执行一次”mian.py”文件</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">15,30 8-9 * * 3 python main.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/2021/08/12/Linux-Crontab/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/12/Linux-Crontab/WX_QR_code.png" class="lozad post-image"></p>
+<p><img src="Linux-Crontab/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Linux-Crontab/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -374,8 +366,8 @@
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="https://w383942470.github.io/2021/08/12/Linux-Crontab/">
-            https://w383942470.github.io/2021/08/12/Linux-Crontab/
+            href="http://example.com/2021/08/12/Linux-Crontab/">
+            http://example.com/2021/08/12/Linux-Crontab/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，转载请注明出处！</p>
@@ -402,12 +394,12 @@
   
     <div class="nav-item-next">
       <a 
-        href="/2021/08/11/Hexo_Article/" 
+        href="/2021/08/12/Web_Hexo/" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">Hexo博客新建文章 </div>
+            <div class="nav-title">如何搭建Hexo博客并部署到GitHub </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -432,7 +424,7 @@
               <div class="card card-author">
                 
   <img 
-    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
     class="author-img"
     width="88"
     height="88"
@@ -450,7 +442,7 @@
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>4</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
@@ -513,7 +505,7 @@
       <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
         <div class="categories-list-item">
           测试相关
-          <span class="categories-list-item-badge">2</span>
+          <span class="categories-list-item-badge">3</span>
         </div>
       </a>
     
@@ -528,13 +520,6 @@
         <div class="categories-list-item">
           服务器
           <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
-          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -651,11 +636,6 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-31</div>
-        <a href="/2021/08/31/Web_Hexo/"><div class="recent-posts-item-content">如何搭建Hexo博客并部署到GitHub</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-30</div>
         <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
       </div>
@@ -668,6 +648,11 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-13</div>
         <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-12</div>
+        <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
       </div>
     
   </div>
@@ -844,7 +829,7 @@
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>
