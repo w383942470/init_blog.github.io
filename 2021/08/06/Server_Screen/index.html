@@ -17,11 +17,7 @@
     content="王富贵 · BLOG">
   <link 
     rel="icon" 
-<<<<<<< HEAD
-    href="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
-=======
     href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
->>>>>>> origin
   <title>Screen的使用方法</title>
   
     
@@ -37,11 +33,7 @@
     
       <meta 
         property="og:img" 
-<<<<<<< HEAD
-        content="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
-=======
         content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
->>>>>>> origin
     
     
     
@@ -53,11 +45,7 @@
         content="2021-08-06">
       <meta 
         property="og:article:modified_time" 
-<<<<<<< HEAD
-        content="2021-08-10">
-=======
-        content="2021-08-11">
->>>>>>> origin
+        content="2021-08-31">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -139,15 +127,18 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
+        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+        prismThemeChange();
       }
     };
     setDarkmode();
@@ -178,7 +169,7 @@
   
     <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-twilight.css" type="text/css">
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
   <body>
@@ -192,11 +183,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-<<<<<<< HEAD
-          src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
-=======
           src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
->>>>>>> origin
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -248,11 +235,7 @@
         href="/links" 
         class="navbar-menu-item">
         
-<<<<<<< HEAD
-          友链
-=======
           联系
->>>>>>> origin
         
       </a>
     
@@ -312,7 +295,7 @@
     
     
       <span class="dot"></span>
-      <span>729 字</span>
+      <span>732 字</span>
     
   </div>
   
@@ -351,36 +334,6 @@
     <h2 id="为什么要使用screen命令"><a href="#为什么要使用screen命令" class="headerlink" title="为什么要使用screen命令"></a>为什么要使用screen命令</h2><p>VPS侦探在刚接触Linux时最怕的就是SSH远程登录Linux VPS编译安装程序时（比如安装lnmp）网络突然断开，或者其他情况导致不得不与远程SSH服务器链接断开，远程执行的命令也被迫停止，只能重新连接，重新运行。相信现在有些VPSer也遇到过这个问题，今天就给VPSer们介绍一款远程会话管理工具 - screen命令。</p>
 <h2 id="一、screen命令是什么？"><a href="#一、screen命令是什么？" class="headerlink" title="一、screen命令是什么？"></a>一、screen命令是什么？</h2><p>Screen是一个可以在多个进程之间多路复用一个物理终端的全屏窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。</p>
 <h2 id="二、如何安装screen命令？"><a href="#二、如何安装screen命令？" class="headerlink" title="二、如何安装screen命令？"></a>二、如何安装screen命令？</h2><p>除部分精简的系统或者定制的系统大部分都安装了screen命令，如果没有安装，CentOS系统可以执行：</p>
-<<<<<<< HEAD
-<pre class="highlight"><span class="line">yum install screen</span><br></pre>
-<p>CentOS 8上移除了screen，需要安装epel后安装screen执行：</p>
-<pre class="highlight"><span class="line">yum install screen</span><br></pre>
-<p>Debian/Ubuntu系统执行：</p>
-<pre class="highlight"><span class="line">apt-get install screen</span><br></pre>
-<h2 id="三、screen命令使用方法？"><a href="#三、screen命令使用方法？" class="headerlink" title="三、screen命令使用方法？"></a>三、screen命令使用方法？</h2><h3 id="1、常用的使用方法"><a href="#1、常用的使用方法" class="headerlink" title="1、常用的使用方法"></a>1、常用的使用方法</h3><p>用来解决文章开始我们遇到的问题，比如在安装lnmp时。</p>
-<h4 id="1-1-创建screen会话"><a href="#1-1-创建screen会话" class="headerlink" title="1.1 创建screen会话"></a>1.1 创建screen会话</h4><p>screen创建一个名字为lnmp的会话。 VPS侦探 <a target="_blank" rel="noopener" href="https://www.vpser.net/">https://www.vpser.net/</a>; 可以先执行：</p>
-<pre class="highlight"><span class="line">screen -S lnmp</span><br></pre>
-<h4 id="1-2-暂时离开，保留screen会话中的任务或程序"><a href="#1-2-暂时离开，保留screen会话中的任务或程序" class="headerlink" title="1.2 暂时离开，保留screen会话中的任务或程序"></a>1.2 暂时离开，保留screen会话中的任务或程序</h4><p>当需要临时离开时（会话中的程序不会关闭，仍在运行）可以用快捷键Ctrl+a d(即按住Ctrl，依次再按a,d)</p>
-<h4 id="1-3-恢复screen会话"><a href="#1-3-恢复screen会话" class="headerlink" title="1.3 恢复screen会话"></a>1.3 恢复screen会话</h4><p>恢复到离开前创建的lnmp会话的工作界面,执行：</p>
-<pre class="highlight"><span class="line">aaaq lnmp </span><br></pre>
-<p>如果忘记了,或者当时没有指定会话名,列出当前存在的会话列表,可以执行：</p>
-<pre class="highlight"><span class="line">screen -ls screen</span><br></pre>
-<p>11791.lnmp即为刚才的screen创建的lnmp会话，目前已经暂时退出了lnmp会话，所以状态为Detached，当使用</p>
-<pre class="highlight"><span class="line">screen -r lnmp</span><br></pre>
-<p>后状态就会变为Attached，11791是这个screen的会话的进程ID，恢复会话时也可以使用：</p>
-<pre class="highlight"><span class="line">screen -r 11791</span><br></pre>
-
-<h4 id="1-4-关闭screen的会话"><a href="#1-4-关闭screen的会话" class="headerlink" title="1.4 关闭screen的会话"></a>1.4 关闭screen的会话</h4><p>执行：</p>
-<pre class="highlight"><span class="line"><span class="built_in">exit</span></span><br></pre>
-<p>会提示：[screen is terminating]，表示已经成功退出screen会话。VPS侦探 <a target="_blank" rel="noopener" href="https://www.vpser.net/">https://www.vpser.net/</a></p>
-<h4 id="1-5-删除会话"><a href="#1-5-删除会话" class="headerlink" title="1.5 删除会话"></a>1.5 删除会话</h4><pre class="highlight"><span class="line">screen -S session_name -X quit</span><br></pre>
-<p>or</p>
-<pre class="highlight"><span class="line">screen -X -S 122128 quit</span><br></pre>
-<h3 id="2、远程演示"><a href="#2、远程演示" class="headerlink" title="2、远程演示"></a>2、远程演示</h3><p>首先演示者先在服务器上执行:</p>
-<pre class="highlight"><span class="line">screen -S <span class="built_in">test</span></span><br></pre>
-<p>创建一个screen会话，观众可以链接到远程服务器上执行:</p>
-<pre class="highlight"><span class="line">screen -x <span class="built_in">test</span></span><br></pre>
-=======
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>CentOS 8上移除了screen，需要安装epel后安装screen执行：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -409,13 +362,12 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -S test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>创建一个screen会话，观众可以链接到远程服务器上执行:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -x test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
->>>>>>> origin
 <p>观众屏幕上就会出现和演示者同步。</p>
 <h3 id="3、常用快捷键"><a href="#3、常用快捷键" class="headerlink" title="3、常用快捷键"></a>3、常用快捷键</h3><h4 id="3-1-在当前screen会话中创建窗口"><a href="#3-1-在当前screen会话中创建窗口" class="headerlink" title="3.1 在当前screen会话中创建窗口"></a>3.1 在当前screen会话中创建窗口</h4><p>Ctrl+a c</p>
 <h4 id="3-2-窗口列表"><a href="#3-2-窗口列表" class="headerlink" title="3.2 窗口列表"></a>3.2 窗口列表</h4><p>Ctrl+a w</p>
 <h4 id="3-3-下一个窗口"><a href="#3-3-下一个窗口" class="headerlink" title="3.3 下一个窗口"></a>3.3 下一个窗口</h4><p>Ctrl+a n</p>
 <h4 id="3-4-上一个窗口"><a href="#3-4-上一个窗口" class="headerlink" title="3.4 上一个窗口"></a>3.4 上一个窗口</h4><p>Ctrl+a p</p>
-<h4 id="3-5-在第0个窗口和第9个窗口之间切换"><a href="#3-5-在第0个窗口和第9个窗口之间切换" class="headerlink" title="3.5 在第0个窗口和第9个窗口之间切换"></a>3.5 在第0个窗口和第9个窗口之间切换</h4><p>Ctrl+a 0-9</p>
+<h4 id="3-5-在第0个窗口和第9个窗口之间切换"><a href="#3-5-在第0个窗口和第9个窗口之间切换" class="headerlink" title="3.5 在第0个窗口和第9个窗口之间切换"></a>3.5 在第0个窗口和第9个窗口之间切换</h4><p>Ctrl+a 0-9<br>Ctrl+a 0-9<br><img src="/2021/08/06/Server_Screen/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/06/Server_Screen/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -448,13 +400,13 @@
   
     <div class="nav-item-prev">
       <a 
-        href="/2021/08/09/Web_Hexo/" 
+        href="/2021/08/11/Hexo_Article/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">如何搭建Hexo博客并部署到GitHub </div>
+            <div class="nav-title">Hexo博客新建文章 </div>
           
         </div>
       </a>
@@ -479,11 +431,7 @@
               <div class="card card-author">
                 
   <img 
-<<<<<<< HEAD
-    src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
-=======
     src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
->>>>>>> origin
     class="author-img"
     width="88"
     height="88"
@@ -495,31 +443,19 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-<<<<<<< HEAD
-    <span>5</span>
-=======
-    <span>6</span>
->>>>>>> origin
+    <span>7</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-<<<<<<< HEAD
     <span>3</span>
-=======
-    <span>4</span>
->>>>>>> origin
     <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-<<<<<<< HEAD
-    <span>7</span>
-=======
-    <span>8</span>
->>>>>>> origin
+    <span>11</span>
     <span>标签</span>
   </a>
 </div>
@@ -573,49 +509,24 @@
   </div>
   <div class="categories-list">
     
-<<<<<<< HEAD
-      <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
         <div class="categories-list-item">
-          服务器
-=======
-      <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
-        <div class="categories-list-item">
-          WEB前端
->>>>>>> origin
-          <span class="categories-list-item-badge">2</span>
+          测试相关
+          <span class="categories-list-item-badge">3</span>
         </div>
       </a>
     
-<<<<<<< HEAD
       <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
         <div class="categories-list-item">
           WEB前端
-=======
-      <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
-        <div class="categories-list-item">
-          自动化测试
-          <span class="categories-list-item-badge">1</span>
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
       <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
         <div class="categories-list-item">
           服务器
->>>>>>> origin
           <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-<<<<<<< HEAD
-      <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
-        <div class="categories-list-item">
-          自动化测试
-=======
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
->>>>>>> origin
-          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -640,15 +551,9 @@
       </a>
     
       <a 
-<<<<<<< HEAD
-        href="/tags/%E9%83%A8%E7%BD%B2/" 
-        title="部署">
-        <div class="tags-list-item">部署</div>
-=======
         href="/tags/%E5%8D%9A%E5%AE%A2/" 
         title="博客">
         <div class="tags-list-item">博客</div>
->>>>>>> origin
       </a>
     
       <a 
@@ -658,26 +563,27 @@
       </a>
     
       <a 
-<<<<<<< HEAD
-        href="/tags/%E5%8D%9A%E5%AE%A2/" 
-        title="博客">
-        <div class="tags-list-item">博客</div>
+        href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
+        title="测试文档">
+        <div class="tags-list-item">测试文档</div>
       </a>
     
       <a 
-        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
-        title="定时任务">
-        <div class="tags-list-item">定时任务</div>
+        href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
+        title="自动化测试">
+        <div class="tags-list-item">自动化测试</div>
+      </a>
+    
+      <a 
+        href="/tags/selenium/" 
+        title="selenium">
+        <div class="tags-list-item">selenium</div>
       </a>
     
       <a 
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
-=======
-        href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
-        title="测试文档">
-        <div class="tags-list-item">测试文档</div>
       </a>
     
       <a 
@@ -690,24 +596,20 @@
         href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
         title="定时任务">
         <div class="tags-list-item">定时任务</div>
->>>>>>> origin
       </a>
     
       <a 
-        href="/tags/selenium/" 
-        title="selenium">
-        <div class="tags-list-item">selenium</div>
+        href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+        title="测试工具">
+        <div class="tags-list-item">测试工具</div>
       </a>
     
-<<<<<<< HEAD
-=======
       <a 
-        href="/tags/python/" 
-        title="python">
-        <div class="tags-list-item">python</div>
+        href="/tags/Fiddler/" 
+        title="Fiddler">
+        <div class="tags-list-item">Fiddler</div>
       </a>
     
->>>>>>> origin
   </div>
 </div>
   </article>
@@ -741,36 +643,25 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-<<<<<<< HEAD
-=======
+        <div class="recent-posts-item-title">2021-08-31</div>
+        <a href="/2021/08/31/Web_Hexo/"><div class="recent-posts-item-content">如何搭建Hexo博客并部署到GitHub</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-30</div>
+        <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-25</div>
         <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
       </div>
     
       <div class="recent-posts-item">
->>>>>>> origin
         <div class="recent-posts-item-title">2021-08-13</div>
         <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
       </div>
     
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-12</div>
-        <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-11</div>
-        <a href="/2021/08/11/Hexo_Article/"><div class="recent-posts-item-content">Hexo博客新建文章</div></a>
-      </div>
-    
-<<<<<<< HEAD
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-09</div>
-        <a href="/2021/08/09/Web_Hexo/"><div class="recent-posts-item-content">如何搭建Hexo博客并部署到GitHub</div></a>
-      </div>
-    
-=======
->>>>>>> origin
   </div>
 </div>
   </article>
