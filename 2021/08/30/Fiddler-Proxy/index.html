@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="Init的个人博客">
+  <link 
+    rel="icon" 
+    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+  <title>Fiddler抓包工具使用及配置</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="Fiddler抓包工具使用及配置">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://w383942470.github.io/2021/08/30/Fiddler-Proxy/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-08-30">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-09-02">
+      <meta 
+        property="og:article:author" 
+        content="Init">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Fiddler">
+        
+          <meta 
+            property="og:article:tag" 
+            content="测试工具">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">王富贵 · BLOG</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          联系
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Fiddler抓包工具使用及配置
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-08-30T09:14:41.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-08-30</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" 
+          class="post-meta-link">
+          测试相关
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>1k 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Fiddler/" 
+            class="post-meta-link">
+            Fiddler
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+            class="post-meta-link">
+            测试工具
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="一、什么是Fiddler？"><a href="#一、什么是Fiddler？" class="headerlink" title="一、什么是Fiddler？"></a>一、什么是Fiddler？</h2><p><font color="red">Fiddler </font>是一个强大的HTTP调试抓包工具。Fiddler官方版可以用其检测网页和服务器的交互情况，Fiddler能够记录所有客户端和服务器间的http请求，支持监视、设置断点、甚至修改输入输出数据等功能。Fiddler对开发人员或者测试人员来说，都是非常有用的工具。</p>
+<h2 id="二、下载安装Fiddler"><a href="#二、下载安装Fiddler" class="headerlink" title="二、下载安装Fiddler"></a>二、下载安装Fiddler</h2><div class="post-note note-info"><p>Fiddler官网下载地址：<a target="_blank" rel="noopener" href="https://www.telerik.com/download/fiddler">打开下载地址</a></p></div>
+<p><img src="Fiddler-Proxy/Download.jpg" alt="下载配置资料" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Download.jpg" class="lozad post-image"></p>
+<div class="post-note note-success"><p>一路next，当见到浏览器打开以下页面时，及安装成功</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Successful.jpg" alt="安装成功" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Successful.jpg" class="lozad post-image"></p>
+<h2 id="三、如何配置Fiddler？"><a href="#三、如何配置Fiddler？" class="headerlink" title="三、如何配置Fiddler？"></a>三、如何配置Fiddler？</h2><h3 id="1、打开Fiddler"><a href="#1、打开Fiddler" class="headerlink" title="1、打开Fiddler"></a>1、打开Fiddler</h3><div class="post-note note-info"><p>安装完成后，打开软件(在安装目录下找到Fiddler.exe文件，双击打开)</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Open.jpg" alt="打开软件" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Open.jpg" class="lozad post-image"></p>
+<h3 id="2、配置Fiddler"><a href="#2、配置Fiddler" class="headerlink" title="2、配置Fiddler"></a>2、配置Fiddler</h3><div class="post-note note-info"><p>打开后我们可以看到Fiddler的一个面板，随后打开tools &gt; options 菜单</p></div>
+<p><img src="Fiddler-Proxy/Fiddler.jpg" alt="Fiddler面板" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>在options菜单中，我们打开https模块，然后勾选Decrypt HTTPS traffic</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Https_traffic.png" alt="勾选traffic" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Https_traffic.png" class="lozad post-image"></p>
+<div class="post-note note-info"><p>随后软件出现以下弹窗，我们选yes</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_certificate.jpg" alt="添加证书" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_certificate.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>在上一步后，系统将提示是否安装证书，我们选是就行了</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_certificate_install.jpg" alt="证书安装" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_certificate_install.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>接着勾选上Ignore server certificate errors即可，返回主面板然后打开浏览器，现在我们就可以看到左侧面板中有抓到的包数据进来了</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Ignore.jpg" alt="同意证书" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Ignore.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>在左侧面板中，我们可以看到数据包的状态码、host、url等</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_left.jpg" alt="左侧面板" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_left.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>在左侧面板中选中一个数据包，则可在右侧面板中查看到该请求的请求头以及具体返回值相关信息</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Right.jpg" alt="右侧面板" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Right.jpg" class="lozad post-image"></p>
+<h4 id="2-1、配置手机抓包"><a href="#2-1、配置手机抓包" class="headerlink" title="2.1、配置手机抓包"></a>2.1、配置手机抓包</h4><div class="post-note note-info"><p>Fiddler中打开tools &gt; options &gt; connection 设置端口，并允许远程连接</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Port.jpg" alt="修改端口，允许远程连接" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Port.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p>首先我们需要在Fiddler右上角获取当前ip地址，手机连接wifi必须与电脑连接的网络处于同一网段</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_IP.jpg" alt="查看ip地址" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_IP.jpg" class="lozad post-image"></p>
+<div class="post-note note-info"><p><font color="red">Android:</font><br>打开手机中设置 &gt; WIFI &gt; 网络详情 &gt; 代理(配置代理) &gt; 手动 中输入刚刚我们的ip以及端口号保存</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Android_Proxy.png" alt="Android设置代理" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Android_Proxy.png" class="lozad post-image"></p>
+<div class="post-note note-info"><p><font color="red">iOS:</font><br>打开手机中设置 &gt; WIFI &gt; 网络详情 &gt; 代理(配置代理) &gt; 手动 中输入刚刚我们的ip以及端口号保存</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_iOS_Proxy.png" alt="iOS设置代理" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_iOS_Proxy.png" class="lozad post-image"></p>
+<div class="post-note note-info"><p>然后打开手机自带的浏览器，输入下面地址，然后点击<font color="red"> FiddlerRoot certificate </font>下载证书</p></div>
+<pre class="line-numbers language-none"><code class="language-none">IP地址:端口号 &#x2F;&#x2F;注意冒号用英文冒号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<div class="post-note note-info"><p><font color="red">Android </font>下载完成后，在下载中找到文件点击根据提示进行安装，至到系统提示安装完成<br><font color="red">iOS </font>需注意下载完成之后，打开设置 &gt; 通用 &gt; 描述文件 进行安装，安装完成之后进入关于本机 &gt; 证书信任中将<font color="Green"> DO_NOT_TRUST_FidderRoot </font>打开</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Certificate_Phone.png" alt="浏览器下载证书" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Certificate_Phone.png" class="lozad post-image"></p>
+<div class="post-note note-success"><p>以上配置完成了之后就可以愉快的抓包啦~</p></div>
+<h2 id="四、如何使用Fiddler"><a href="#四、如何使用Fiddler" class="headerlink" title="四、如何使用Fiddler"></a>四、如何使用Fiddler</h2><h4 id="1、过滤器"><a href="#1、过滤器" class="headerlink" title="1、过滤器"></a>1、过滤器</h4><div class="post-note note-info"><p>在右侧面板中，打开 Filters ，勾选 use Filters ，然后与下图相同配置，在输入框中输入想要过滤出来的域名，如:baidu.com 多个域名之间使用英文分号隔开，设置完成后点击右侧Action中 Run Filterset Now 立即执行</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_filter.jpg" alt="过滤器" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_filter.jpg" class="lozad post-image"></p>
+<h4 id="2、断点"><a href="#2、断点" class="headerlink" title="2、断点"></a>2、断点</h4><div class="post-note note-info"><p>在顶部菜单中选择 Rules &gt; Automatic BreakPoints，在这个菜单项我们可以看到有<font color="red">Before Requests 、 After Requests 、 Disabled </font>三个选项，默认选中Disables。<br><font color="red">Before Requests </font>则为在请求之前拦截，选择了此项后，我们可以在请求之前修改请求头，修改完成后，点击Run to Completion即可发送请求，以达到测试效果<br><font color="red">After Requests </font>则为在请求之后拦截，选择了此项后，我们可以在请求之后修改返回参数，修改完成后，点击Run to Completion即可发送请求，以达到测试效果</p></div>
+<p><img src="Fiddler-Proxy/Fiddler_Before.jpg" alt="修改请求头" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_Before.jpg" class="lozad post-image"><br><img src="Fiddler-Proxy/Fiddler_After.jpg" alt="修改返回参数" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/Fiddler_After.jpg" class="lozad post-image"></p>
+<h4 id="3、弱网设置"><a href="#3、弱网设置" class="headerlink" title="3、弱网设置"></a>3、弱网设置</h4><div class="post-note note-info"><p>在右侧面板中，打开 FiddlerScript，找到以下脚本进行更改。<br><font color="red"> request-trickle-delay </font>中的值代表每KB的数据被上传时会被延时多少毫秒；<br><font color="red"> response-trickle-delay </font>则对应下载时每KB的数据会被延时多少毫秒</p></div>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>m_SimulateModem<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// Delay sends by 300ms per KB uploaded.</span>
+    oSession<span class="token punctuation">[</span><span class="token string">"request-trickle-delay"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"300"</span><span class="token punctuation">;</span> 
+    <span class="token comment">// Delay receives by 150ms per KB downloaded.</span>
+    oSession<span class="token punctuation">[</span><span class="token string">"response-trickle-delay"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"150"</span><span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="五、小节"><a href="#五、小节" class="headerlink" title="五、小节"></a>五、小节</h3><div class="post-note note-success"><p>如果上述操作没有抓到包，建议尝试手动导入导出证书后再试。最后附上官方文档，如有其它功能需求可以<a target="_blank" rel="noopener" href="https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler">查看官方文档~</a></p></div>
+<p><img src="Fiddler-Proxy/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Fiddler-Proxy/WX_QR_code.png" class="lozad post-image"></p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            Init
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://w383942470.github.io/2021/08/30/Fiddler-Proxy/">
+            https://w383942470.github.io/2021/08/30/Fiddler-Proxy/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2021/08/25/Submit-Test/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">软件测试质量保障之开发提测 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFFiddler%EF%BC%9F"><span class="toc-text">一、什么是Fiddler？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Fiddler"><span class="toc-text">二、下载安装Fiddler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEFiddler%EF%BC%9F"><span class="toc-text">三、如何配置Fiddler？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80Fiddler"><span class="toc-text">1、打开Fiddler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AEFiddler"><span class="toc-text">2、配置Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85"><span class="toc-text">2.1、配置手机抓包</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Fiddler"><span class="toc-text">四、如何使用Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">1、过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%96%AD%E7%82%B9"><span class="toc-text">2、断点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%BC%B1%E7%BD%91%E8%AE%BE%E7%BD%AE"><span class="toc-text">3、弱网设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B0%8F%E8%8A%82"><span class="toc-text">五、小节</span></a></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">Init</p>
+<p class="author-description">王富贵的日常学习小结~</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>7</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>3</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>11</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/w383942470">
+          <i class="iconfont iconfont society-icon icon-github society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a href="mailto:w383942470@163.com">
+          <i class="iconfont iconfont society-icon icon-mail society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383942470&amp;site=qq&amp;menu=yes">
+          <i class="iconfont iconfont society-icon icon-wechat society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFFiddler%EF%BC%9F"><span class="toc-text">一、什么是Fiddler？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Fiddler"><span class="toc-text">二、下载安装Fiddler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEFiddler%EF%BC%9F"><span class="toc-text">三、如何配置Fiddler？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80Fiddler"><span class="toc-text">1、打开Fiddler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AEFiddler"><span class="toc-text">2、配置Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85"><span class="toc-text">2.1、配置手机抓包</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Fiddler"><span class="toc-text">四、如何使用Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">1、过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%96%AD%E7%82%B9"><span class="toc-text">2、断点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%BC%B1%E7%BD%91%E8%AE%BE%E7%BD%AE"><span class="toc-text">3、弱网设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B0%8F%E8%8A%82"><span class="toc-text">五、小节</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
+        <div class="categories-list-item">
+          测试相关
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
+        <div class="categories-list-item">
+          WEB前端
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        <div class="categories-list-item">
+          服务器
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8D%9A%E5%AE%A2/" 
+        title="博客">
+        <div class="tags-list-item">博客</div>
+      </a>
+    
+      <a 
+        href="/tags/Hexo/" 
+        title="Hexo">
+        <div class="tags-list-item">Hexo</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
+        title="测试文档">
+        <div class="tags-list-item">测试文档</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%83%A8%E7%BD%B2/" 
+        title="部署">
+        <div class="tags-list-item">部署</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
+        title="自动化测试">
+        <div class="tags-list-item">自动化测试</div>
+      </a>
+    
+      <a 
+        href="/tags/selenium/" 
+        title="selenium">
+        <div class="tags-list-item">selenium</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
+        title="定时任务">
+        <div class="tags-list-item">定时任务</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+        title="测试工具">
+        <div class="tags-list-item">测试工具</div>
+      </a>
+    
+      <a 
+        href="/tags/Fiddler/" 
+        title="Fiddler">
+        <div class="tags-list-item">Fiddler</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFFiddler%EF%BC%9F"><span class="toc-text">一、什么是Fiddler？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Fiddler"><span class="toc-text">二、下载安装Fiddler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEFiddler%EF%BC%9F"><span class="toc-text">三、如何配置Fiddler？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80Fiddler"><span class="toc-text">1、打开Fiddler</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AEFiddler"><span class="toc-text">2、配置Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E3%80%81%E9%85%8D%E7%BD%AE%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85"><span class="toc-text">2.1、配置手机抓包</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Fiddler"><span class="toc-text">四、如何使用Fiddler</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">1、过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%96%AD%E7%82%B9"><span class="toc-text">2、断点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E5%BC%B1%E7%BD%91%E8%AE%BE%E7%BD%AE"><span class="toc-text">3、弱网设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B0%8F%E8%8A%82"><span class="toc-text">五、小节</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-30</div>
+        <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-25</div>
+        <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-13</div>
+        <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-12</div>
+        <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          王富贵 · BLOG
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
