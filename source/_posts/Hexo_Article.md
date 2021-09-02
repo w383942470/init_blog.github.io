@@ -1,7 +1,7 @@
 ---
 title: Hexo博客新建文章
 date: 2021-08-11 09:55:21
-tags:[Hexo, 博客]
+tags: [Hexo, 博客]
 categories: WEB前端
 ---
 ## 创建新文章
