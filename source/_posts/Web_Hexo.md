@@ -1,5 +1,6 @@
 ---
 title: 如何搭建Hexo博客并部署到GitHub
+date: 2021-08-12 09:35:21
 tags: [Hexo, 博客]
 categories: WEB前端
 ---

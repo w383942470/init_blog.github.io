@@ -14,10 +14,10 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="王富贵 · BLOG">
+    content="Hexo">
   <link 
     rel="icon" 
-    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    href="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
   <title>Python+Selenium 调起浏览器</title>
   
     
@@ -28,12 +28,12 @@
     
       <meta 
         property="og:url" 
-        content="https://w383942470.github.io/2021/08/13/Python-Selenium/index.html">
+        content="http://example.com/2021/08/13/Python-Selenium/index.html">
     
     
       <meta 
         property="og:img" 
-        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+        content="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100">
     
     
     
@@ -45,7 +45,7 @@
         content="2021-08-13">
       <meta 
         property="og:article:modified_time" 
-        content="2021-09-01">
+        content="2021-09-02">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -187,7 +187,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -224,14 +224,6 @@
         class="navbar-menu-item">
         
           分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
         
       </a>
     
@@ -344,7 +336,7 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="一、什么是Selenium？"><a href="#一、什么是Selenium？" class="headerlink" title="一、什么是Selenium？"></a>一、什么是Selenium？</h2><p><font color="red">Selenium</font>是一个用于Web应用程序测试的工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7, 8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera，Edge等。这个工具的主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。测试系统功能——创建回归测试检验软件功能和用户需求。支持自动录制动作和自动生成 .Net、Java、Perl等不同语言的测试脚本。</p>
+    <h2 id="一、什么是Selenium？"><a href="#一、什么是Selenium？" class="headerlink" title="一、什么是Selenium？"></a>一、什么是Selenium？</h2><p><font color=red>Selenium</font>是一个用于Web应用程序测试的工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7, 8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera，Edge等。这个工具的主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。测试系统功能——创建回归测试检验软件功能和用户需求。支持自动录制动作和自动生成 .Net、Java、Perl等不同语言的测试脚本。</p>
 <h2 id="二、安装Selenium"><a href="#二、安装Selenium" class="headerlink" title="二、安装Selenium"></a>二、安装Selenium</h2><h3 id="1-下载python的selenium安装包"><a href="#1-下载python的selenium安装包" class="headerlink" title="1. 下载python的selenium安装包"></a>1. 下载python的selenium安装包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install selenium<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="2-Windows下下载与浏览器版本相对应的webdriver"><a href="#2-Windows下下载与浏览器版本相对应的webdriver" class="headerlink" title="2. Windows下下载与浏览器版本相对应的webdriver"></a>2. Windows下下载与浏览器版本相对应的webdriver</h3><p>chrom浏览器的web driver</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">http:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;chromedriver&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -354,7 +346,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;webkit.org&#x2F;blog&#x2F;6900&#x2F;webdriver-support-in-safari-10&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <div class="post-note note-primary"><p>下载完成后，将解压出来的exe文件与py文件放置同一个目录下。</p></div>
 <h2 id="三、示例"><a href="#三、示例" class="headerlink" title="三、示例"></a>三、示例</h2><h3 id="1-引入Selenium包，并调起浏览器"><a href="#1-引入Selenium包，并调起浏览器" class="headerlink" title="1. 引入Selenium包，并调起浏览器"></a>1. 引入Selenium包，并调起浏览器</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">from selenium <span class="token keyword">import</span> webdriver<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/2021/08/13/Python-Selenium/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/13/Python-Selenium/WX_QR_code.png" class="lozad post-image"></p>
+<p><img src="Python-Selenium/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Python-Selenium/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -374,8 +366,8 @@
           <span style="font-weight: bold;">文章链接：</span><a 
             target="_blank" 
             rel="nofollow noopener noreferrer" 
-            href="https://w383942470.github.io/2021/08/13/Python-Selenium/">
-            https://w383942470.github.io/2021/08/13/Python-Selenium/
+            href="http://example.com/2021/08/13/Python-Selenium/">
+            http://example.com/2021/08/13/Python-Selenium/
           </a>
         </p>
         <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，转载请注明出处！</p>
@@ -432,7 +424,7 @@
               <div class="card card-author">
                 
   <img 
-    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    src="https://portrait.gitee.com/uploads/avatars/user/1789/5367819_init_wang_1578985502.png!avatar100" 
     class="author-img"
     width="88"
     height="88"
@@ -450,7 +442,7 @@
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>4</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
@@ -513,7 +505,7 @@
       <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
         <div class="categories-list-item">
           测试相关
-          <span class="categories-list-item-badge">2</span>
+          <span class="categories-list-item-badge">3</span>
         </div>
       </a>
     
@@ -528,13 +520,6 @@
         <div class="categories-list-item">
           服务器
           <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
-          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -844,7 +829,7 @@
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>
