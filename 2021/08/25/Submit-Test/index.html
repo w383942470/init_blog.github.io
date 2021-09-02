@@ -14,7 +14,7 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="王富贵 · BLOG">
+    content="Init的个人博客">
   <link 
     rel="icon" 
     href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
@@ -45,7 +45,7 @@
         content="2021-08-25">
       <meta 
         property="og:article:modified_time" 
-        content="2021-08-25">
+        content="2021-09-02">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -162,8 +162,7 @@
   
     <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-twilight.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
@@ -217,22 +216,10 @@
       </a>
     
       <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
         href="/links" 
         class="navbar-menu-item">
         
-<<<<<<< HEAD
-          友链
-=======
           联系
->>>>>>> origin
         
       </a>
     
@@ -284,15 +271,15 @@
       <span class="dot"></span>
       
         <a 
-          href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
+          href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/" 
           class="post-meta-link">
-          测试文档
+          测试相关
         </a>
       
     
     
       <span class="dot"></span>
-      <span>892 字</span>
+      <span>916 字</span>
     
   </div>
   
@@ -319,11 +306,12 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="1-什么是提测-？"><a href="#1-什么是提测-？" class="headerlink" title="1.什么是提测 ？"></a>1.什么是提测 ？</h2><p>“提测”即提交测试人员进行系统性的测试。进入到该流程说明开发人员对于模块的编写实现以及接口的完成是完全按照产品、设计师提供的prd以及设计图实现，然后测试人员开始测试的一个流程。</p>
-<h2 id="2-为什么要有提测这个流程？"><a href="#2-为什么要有提测这个流程？" class="headerlink" title="2.为什么要有提测这个流程？"></a>2.为什么要有提测这个流程？</h2><p>开发提测是正式开始测试的重要关卡，提测质量的好坏会直接影响测试阶段的效率，进而影响项目进度。较好的提测质量，对提高测试效率和优化项目进度有着事半功倍的作用。</p>
-<h2 id="3-如果没有提测这个流程会有些什么样的影响？"><a href="#3-如果没有提测这个流程会有些什么样的影响？" class="headerlink" title="3.如果没有提测这个流程会有些什么样的影响？"></a>3.如果没有提测这个流程会有些什么样的影响？</h2><p>功能跟产品PRD里的不一样，走偏了；前端BUG不断； 严重阻塞性BUG不断；测试环境极度不稳定，测试人员需要一直与开发人员沟通定位问题。这些问题都会造成极大的沟通成本、执行成本，也会占用很多资源，直接影响了整个部门对需求处理的吞吐量。</p>
-<h2 id="4-如何做好提测，以提高提测质量？"><a href="#4-如何做好提测，以提高提测质量？" class="headerlink" title="4.如何做好提测，以提高提测质量？"></a>4.如何做好提测，以提高提测质量？</h2><p>推进提测质量的提高，可以有很多种方式。每个公司或项目组都会有各自特点及相应适用匹配的方法流程。<br>在正式提测前开发实现中，可以通过方案讲解会、code review来提高实现质量及预期结果；正式提测阶段，可以通过自测用例、交互走查、视觉走查等方式把关质量；提测后，可以有产品验收等方式。在这里，主要和大家一起沟通下正式提测阶段的自测用例。<br>自测用例(冒烟测试用例)由测试在迭代开发完成之前以邮件的形式发送至开发人员邮箱中，开发人员在接收到邮件且完成开发后，自行根据测试用例进行自测(在此之前开发人员需先自行验证是否有报错)。<br>如开发人员在自测过程中发现存在与需求/设计图相违背的情况，需告知产品以及测试，三方进行协调决定是否采纳，如采纳则继续执行用例，不采纳则开发人员需重新整理方案后再继续执行用例。<br>提测的开始需由开发人员发送邮件至测试人员告知可进行提测，随即测试人员开始根据用例进行测试，若冒烟测试通过，则正式进入测试流程，开始进一步根据测试大纲进行测试；如若冒烟测试不通过且非机型问题，则测试人员向全体相关人员发送提测不通过邮件，开发人员需修改完成后重新自测，通过后可再次提测(一天时间内测试人员不接受两次提测)。</p>
-<h2 id="5-提测邮件模板"><a href="#5-提测邮件模板" class="headerlink" title="5.提测邮件模板"></a>5.提测邮件模板</h2><h3 id="XXXX-需求提测通知"><a href="#XXXX-需求提测通知" class="headerlink" title=" XXXX 需求提测通知"></a><center><font color="blue"> XXXX </font><font color="#00FF00;">需求提测通知</font></center></h3><h3 id="一、提测需求"><a href="#一、提测需求" class="headerlink" title="一、提测需求:"></a><font color="#00FF00;">一、提测需求:</font></h3><h4 id="1-XXXX-需求文档：需求链接"><a href="#1-XXXX-需求文档：需求链接" class="headerlink" title="1. XXXX 需求文档：需求链接"></a><font color="#00FF00;">1.</font><font color="blue"> XXXX </font><font color="#00FF00;">需求文档：需求链接</font></h4><h4 id="2-接口文档：接口文档链接"><a href="#2-接口文档：接口文档链接" class="headerlink" title="2.接口文档：接口文档链接"></a><font color="#00FF00;">2.接口文档：接口文档链接</font></h4><h3 id="二、提测环境-测试环境"><a href="#二、提测环境-测试环境" class="headerlink" title="二、提测环境:测试环境"></a><font color="#00FF00;">二、提测环境:测试环境</font></h3><h3 id="三、自测结论-通过"><a href="#三、自测结论-通过" class="headerlink" title="三、自测结论:通过"></a><font color="#00FF00;">三、自测结论:通过</font></h3><h3 id="四、提测范围"><a href="#四、提测范围" class="headerlink" title="四、提测范围:"></a><font color="#00FF00;">四、提测范围:</font></h3><h4 id="1，提测XX功能，起到了XX的效果"><a href="#1，提测XX功能，起到了XX的效果" class="headerlink" title="1，提测XX功能，起到了XX的效果"></a><font color="#00FF00;">1，提测<font color="blue">XX</font>功能，起到了<font color="blue">XX</font>的效果</font></h4><h4 id="2，测试类型为功能测试和接口测试-如有接口测试"><a href="#2，测试类型为功能测试和接口测试-如有接口测试" class="headerlink" title="2，测试类型为功能测试和接口测试(如有接口测试)"></a><font color="#00FF00;">2，测试类型为功能测试和接口测试(如有接口测试)</font></h4><h4 id="3，测试类型为功能测试"><a href="#3，测试类型为功能测试" class="headerlink" title="3，测试类型为功能测试"></a><font color="#00FF00;">3，测试类型为功能测试</font></h4><h3 id="五、影响范围-本次提测对XX功能-模块有影响，需要重点关注"><a href="#五、影响范围-本次提测对XX功能-模块有影响，需要重点关注" class="headerlink" title="五、影响范围: 本次提测对XX功能/模块有影响，需要重点关注 "></a><font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font></h3>
+    <h2 id="一、什么是提测-？"><a href="#一、什么是提测-？" class="headerlink" title="一、什么是提测 ？"></a>一、什么是提测 ？</h2><p>“提测”即提交测试人员进行系统性的测试。进入到该流程说明开发人员对于模块的编写实现以及接口的完成是完全按照产品、设计师提供的prd以及设计图实现，然后测试人员开始测试的一个流程。</p>
+<h2 id="二、为什么要有提测这个流程？"><a href="#二、为什么要有提测这个流程？" class="headerlink" title="二、为什么要有提测这个流程？"></a>二、为什么要有提测这个流程？</h2><p>开发提测是正式开始测试的重要关卡，提测质量的好坏会直接影响测试阶段的效率，进而影响项目进度。较好的提测质量，对提高测试效率和优化项目进度有着事半功倍的作用。</p>
+<h2 id="三、如果没有提测这个流程会有些什么样的影响？"><a href="#三、如果没有提测这个流程会有些什么样的影响？" class="headerlink" title="三、如果没有提测这个流程会有些什么样的影响？"></a>三、如果没有提测这个流程会有些什么样的影响？</h2><p>功能跟产品PRD里的不一样，走偏了；前端BUG不断； 严重阻塞性BUG不断；测试环境极度不稳定，测试人员需要一直与开发人员沟通定位问题。这些问题都会造成极大的沟通成本、执行成本，也会占用很多资源，直接影响了整个部门对需求处理的吞吐量。</p>
+<h2 id="四、如何做好提测，以提高提测质量？"><a href="#四、如何做好提测，以提高提测质量？" class="headerlink" title="四、如何做好提测，以提高提测质量？"></a>四、如何做好提测，以提高提测质量？</h2><p>推进提测质量的提高，可以有很多种方式。每个公司或项目组都会有各自特点及相应适用匹配的方法流程。<br>在正式提测前开发实现中，可以通过方案讲解会、code review来提高实现质量及预期结果；正式提测阶段，可以通过自测用例、交互走查、视觉走查等方式把关质量；提测后，可以有产品验收等方式。在这里，主要和大家一起沟通下正式提测阶段的自测用例。<br>自测用例(冒烟测试用例)由测试在迭代开发完成之前以邮件的形式发送至开发人员邮箱中，开发人员在接收到邮件且完成开发后，自行根据测试用例进行自测(在此之前开发人员需先自行验证是否有报错)。<br>如开发人员在自测过程中发现存在与需求/设计图相违背的情况，需告知产品以及测试，三方进行协调决定是否采纳，如采纳则继续执行用例，不采纳则开发人员需重新整理方案后再继续执行用例。<br>提测的开始需由开发人员发送邮件至测试人员告知可进行提测，随即测试人员开始根据用例进行测试，若冒烟测试通过，则正式进入测试流程，开始进一步根据测试大纲进行测试；如若冒烟测试不通过且非机型问题，则测试人员向全体相关人员发送提测不通过邮件，开发人员需修改完成后重新自测，通过后可再次提测(一天时间内测试人员不接受两次提测)。</p>
+<h2 id="五、提测邮件模板"><a href="#五、提测邮件模板" class="headerlink" title="五、提测邮件模板"></a>五、提测邮件模板</h2><h3 id="XXXX-需求提测通知"><a href="#XXXX-需求提测通知" class="headerlink" title=" XXXX 需求提测通知"></a><center><font color="blue"> XXXX </font><font color="#00FF00;">需求提测通知</font></center></h3><h3 id="一、提测需求"><a href="#一、提测需求" class="headerlink" title="一、提测需求:"></a><font color="#00FF00;">一、提测需求:</font></h3><h4 id="1-XXXX-需求文档：需求链接"><a href="#1-XXXX-需求文档：需求链接" class="headerlink" title="1. XXXX 需求文档：需求链接"></a><font color="#00FF00;">1.</font><font color="blue"> XXXX </font><font color="#00FF00;">需求文档：需求链接</font></h4><h4 id="2-接口文档：接口文档链接"><a href="#2-接口文档：接口文档链接" class="headerlink" title="2.接口文档：接口文档链接"></a><font color="#00FF00;">2.接口文档：接口文档链接</font></h4><h3 id="二、提测环境-测试环境"><a href="#二、提测环境-测试环境" class="headerlink" title="二、提测环境:测试环境"></a><font color="#00FF00;">二、提测环境:测试环境</font></h3><h3 id="三、自测结论-通过"><a href="#三、自测结论-通过" class="headerlink" title="三、自测结论:通过"></a><font color="#00FF00;">三、自测结论:通过</font></h3><h3 id="四、提测范围"><a href="#四、提测范围" class="headerlink" title="四、提测范围:"></a><font color="#00FF00;">四、提测范围:</font></h3><h4 id="1，提测XX功能，起到了XX的效果"><a href="#1，提测XX功能，起到了XX的效果" class="headerlink" title="1，提测XX功能，起到了XX的效果"></a><font color="#00FF00;">1，提测<font color="blue">XX</font>功能，起到了<font color="blue">XX</font>的效果</font></h4><h4 id="2，测试类型为功能测试和接口测试-如有接口测试"><a href="#2，测试类型为功能测试和接口测试-如有接口测试" class="headerlink" title="2，测试类型为功能测试和接口测试(如有接口测试)"></a><font color="#00FF00;">2，测试类型为功能测试和接口测试(如有接口测试)</font></h4><h4 id="3，测试类型为功能测试"><a href="#3，测试类型为功能测试" class="headerlink" title="3，测试类型为功能测试"></a><font color="#00FF00;">3，测试类型为功能测试</font></h4><h3 id="五、影响范围-本次提测对XX功能-模块有影响，需要重点关注"><a href="#五、影响范围-本次提测对XX功能-模块有影响，需要重点关注" class="headerlink" title="五、影响范围: 本次提测对XX功能/模块有影响，需要重点关注 "></a><font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font></h3><h3 id="五、影响范围-本次提测对XX功能-模块有影响，需要重点关注-1"><a href="#五、影响范围-本次提测对XX功能-模块有影响，需要重点关注-1" class="headerlink" title="五、影响范围: 本次提测对XX功能/模块有影响，需要重点关注 "></a><font color="#00FF00;">五、影响范围: 本次提测对<font color="blue">XX</font>功能/模块有影响，需要重点关注 </font></h3><p><img src="Submit-Test/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Submit-Test/WX_QR_code.png" class="lozad post-image"></p>
+
   </div>
   <div>
     
@@ -353,6 +341,20 @@
 </article>
 <div class="nav">
   
+    <div class="nav-item-prev">
+      <a 
+        href="/2021/08/30/Fiddler-Proxy/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">Fiddler抓包工具使用及配置 </div>
+          
+        </div>
+      </a>
+    </div>
+  
   
     <div class="nav-item-next">
       <a 
@@ -379,7 +381,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">1.什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">2.为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">3.如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">4.如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">5.提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">一、什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">二、为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">三、如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">四、如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">五、提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8-1"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
 </div></main>
             <aside class="left-column">
               
@@ -398,19 +400,19 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>6</span>
+    <span>7</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>4</span>
+    <span>3</span>
     <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>8</span>
+    <span>11</span>
     <span>标签</span>
   </a>
 </div>
@@ -449,7 +451,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">1.什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">2.为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">3.如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">4.如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">5.提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">一、什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">二、为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">三、如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">四、如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">五、提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8-1"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
       </div>
     </article>
   
@@ -464,6 +466,13 @@
   </div>
   <div class="categories-list">
     
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
+        <div class="categories-list-item">
+          测试相关
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
       <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
         <div class="categories-list-item">
           WEB前端
@@ -471,24 +480,10 @@
         </div>
       </a>
     
-      <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
-        <div class="categories-list-item">
-          自动化测试
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
       <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
         <div class="categories-list-item">
           服务器
           <span class="categories-list-item-badge">2</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-        <div class="categories-list-item">
-          测试文档
-          <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
@@ -537,9 +532,9 @@
       </a>
     
       <a 
-        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
-        title="定时任务">
-        <div class="tags-list-item">定时任务</div>
+        href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
+        title="自动化测试">
+        <div class="tags-list-item">自动化测试</div>
       </a>
     
       <a 
@@ -552,6 +547,24 @@
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
+        title="定时任务">
+        <div class="tags-list-item">定时任务</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+        title="测试工具">
+        <div class="tags-list-item">测试工具</div>
+      </a>
+    
+      <a 
+        href="/tags/Fiddler/" 
+        title="Fiddler">
+        <div class="tags-list-item">Fiddler</div>
       </a>
     
   </div>
@@ -572,7 +585,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">1.什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">2.为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">3.如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">4.如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">5.提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E6%B5%8B-%EF%BC%9F"><span class="toc-text">一、什么是提测 ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="toc-text">二、为什么要有提测这个流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E6%8F%90%E6%B5%8B%E8%BF%99%E4%B8%AA%E6%B5%81%E7%A8%8B%E4%BC%9A%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">三、如果没有提测这个流程会有些什么样的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E6%8F%90%E6%B5%8B%EF%BC%8C%E4%BB%A5%E6%8F%90%E9%AB%98%E6%8F%90%E6%B5%8B%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">四、如何做好提测，以提高提测质量？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8F%90%E6%B5%8B%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF"><span class="toc-text">五、提测邮件模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XXXX-%E9%9C%80%E6%B1%82%E6%8F%90%E6%B5%8B%E9%80%9A%E7%9F%A5"><span class="toc-text"> XXXX 需求提测通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8F%90%E6%B5%8B%E9%9C%80%E6%B1%82"><span class="toc-text">一、提测需求:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-XXXX-%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3%EF%BC%9A%E9%9C%80%E6%B1%82%E9%93%BE%E6%8E%A5"><span class="toc-text">1. XXXX 需求文档：需求链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%EF%BC%9A%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E9%93%BE%E6%8E%A5"><span class="toc-text">2.接口文档：接口文档链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E6%B5%8B%E7%8E%AF%E5%A2%83-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-text">二、提测环境:测试环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%87%AA%E6%B5%8B%E7%BB%93%E8%AE%BA-%E9%80%9A%E8%BF%87"><span class="toc-text">三、自测结论:通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%90%E6%B5%8B%E8%8C%83%E5%9B%B4"><span class="toc-text">四、提测范围:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8F%90%E6%B5%8BXX%E5%8A%9F%E8%83%BD%EF%BC%8C%E8%B5%B7%E5%88%B0%E4%BA%86XX%E7%9A%84%E6%95%88%E6%9E%9C"><span class="toc-text">1，提测XX功能，起到了XX的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E5%92%8C%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95-%E5%A6%82%E6%9C%89%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">2，测试类型为功能测试和接口测试(如有接口测试)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">3，测试类型为功能测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-%E6%9C%AC%E6%AC%A1%E6%8F%90%E6%B5%8B%E5%AF%B9XX%E5%8A%9F%E8%83%BD-%E6%A8%A1%E5%9D%97%E6%9C%89%E5%BD%B1%E5%93%8D%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E7%82%B9%E5%85%B3%E6%B3%A8-1"><span class="toc-text">五、影响范围: 本次提测对XX功能&#x2F;模块有影响，需要重点关注 </span></a></li></ol></li></ol>
     </article>
   
   
@@ -587,6 +600,11 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-30</div>
+        <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-25</div>
         <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
       </div>
@@ -599,11 +617,6 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-12</div>
         <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-11</div>
-        <a href="/2021/08/11/Hexo_Article/"><div class="recent-posts-item-content">Hexo博客新建文章</div></a>
       </div>
     
   </div>
@@ -780,7 +793,7 @@
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>

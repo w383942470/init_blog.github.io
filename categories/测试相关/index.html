@@ -14,7 +14,7 @@
     id="theme-color">
   <meta 
     name="description" 
-    content="王富贵 · BLOG">
+    content="Init的个人博客">
   <link 
     rel="icon" 
     href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
@@ -103,18 +103,15 @@
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else if(reverseDarkList[setting]) {
         document.documentElement.setAttribute('data-user-color-scheme', setting);
         document.getElementById('theme-color').content = themeColor[setting];
         document.getElementById('theme-color').dataset.mode = setting;
-        prismThemeChange();
       } else {
         document.documentElement.removeAttribute('data-user-color-scheme');
         localStorage.removeItem('user-color-scheme');
         document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
         document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
-        prismThemeChange();
       }
     };
     setDarkmode();
@@ -143,8 +140,7 @@
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
@@ -194,14 +190,6 @@
         class="navbar-menu-item">
         
           分类
-        
-      </a>
-    
-      <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
         
       </a>
     
@@ -433,6 +421,12 @@
       </a>
     
       <a 
+        href="/tags/%E9%83%A8%E7%BD%B2/" 
+        title="部署">
+        <div class="tags-list-item">部署</div>
+      </a>
+    
+      <a 
         href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
         title="自动化测试">
         <div class="tags-list-item">自动化测试</div>
@@ -448,12 +442,6 @@
         href="/tags/python/" 
         title="python">
         <div class="tags-list-item">python</div>
-      </a>
-    
-      <a 
-        href="/tags/%E9%83%A8%E7%BD%B2/" 
-        title="部署">
-        <div class="tags-list-item">部署</div>
       </a>
     
       <a 
@@ -556,11 +544,6 @@
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2021-08-30</div>
-        <a href="/2021/08/30/Web_Hexo/"><div class="recent-posts-item-content">如何搭建Hexo博客并部署到GitHub</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-25</div>
         <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
       </div>
@@ -568,6 +551,11 @@
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2021-08-13</div>
         <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-12</div>
+        <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
       </div>
     
   </div>
@@ -768,7 +756,7 @@
     
     
       <script>
-        setTimeout(() => {localSearch("../../../../search.json")}, 0)
+        setTimeout(() => {localSearch("search.json")}, 0)
       </script>
     
   </body>
