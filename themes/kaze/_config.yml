@@ -13,12 +13,12 @@ menus:
   archive: /archives
   tags: /tags
   categories: /categories
-#  about: /about
+  about: /about
   friends: /links
   # artitalk: /shuoshuo # You can uncomment to add this route
 
 about:
-  description: description
+  description: 富贵的日常学习小结~
   social_links:
      - { icon: iconfont society-icon icon-github, link: https://github.com/w383942470 }
      - { icon: iconfont society-icon icon-mail, link: mailto:w383942470@163.com }
