@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="Init的个人博客">
+  <link 
+    rel="icon" 
+    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+  <title>Screen的使用方法</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="Screen的使用方法">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://w383942470.github.io/2021/08/06/Server_Screen/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2021-08-06">
+      <meta 
+        property="og:article:modified_time" 
+        content="2021-09-02">
+      <meta 
+        property="og:article:author" 
+        content="Init">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="Linux">
+        
+          <meta 
+            property="og:article:tag" 
+            content="部署">
+        
+      
+    
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <span class="navbar-logo-main">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">王富贵 · BLOG</span>
+    </span>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          联系
+        
+      </a>
+    
+    <a 
+      class="navbar-menu-item darknavbar" 
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </a>
+    <a 
+      class="navbar-menu-item searchnavbar" 
+      id="search">
+      <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i>
+    </a>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Screen的使用方法
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2021-08-06T08:36:27.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2021-08-06</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" 
+          class="post-meta-link">
+          服务器
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>732 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/Linux/" 
+            class="post-meta-link">
+            Linux
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/%E9%83%A8%E7%BD%B2/" 
+            class="post-meta-link">
+            部署
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <p><img src="images/server_screen/img.png" alt="图片" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="images/server_screen/img.png" class="lozad post-image"></p>
+<h2 id="为什么要使用screen命令"><a href="#为什么要使用screen命令" class="headerlink" title="为什么要使用screen命令"></a>为什么要使用screen命令</h2><p>VPS侦探在刚接触Linux时最怕的就是SSH远程登录Linux VPS编译安装程序时（比如安装lnmp）网络突然断开，或者其他情况导致不得不与远程SSH服务器链接断开，远程执行的命令也被迫停止，只能重新连接，重新运行。相信现在有些VPSer也遇到过这个问题，今天就给VPSer们介绍一款远程会话管理工具 - screen命令。</p>
+<h2 id="一、screen命令是什么？"><a href="#一、screen命令是什么？" class="headerlink" title="一、screen命令是什么？"></a>一、screen命令是什么？</h2><p>Screen是一个可以在多个进程之间多路复用一个物理终端的全屏窗口管理器。Screen中有会话的概念，用户可以在一个screen会话中创建多个screen窗口，在每一个screen窗口中就像操作一个真实的telnet/SSH连接窗口那样。</p>
+<h2 id="二、如何安装screen命令？"><a href="#二、如何安装screen命令？" class="headerlink" title="二、如何安装screen命令？"></a>二、如何安装screen命令？</h2><p>除部分精简的系统或者定制的系统大部分都安装了screen命令，如果没有安装，CentOS系统可以执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>CentOS 8上移除了screen，需要安装epel后安装screen执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Debian/Ubuntu系统执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">apt-get install screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="三、screen命令使用方法？"><a href="#三、screen命令使用方法？" class="headerlink" title="三、screen命令使用方法？"></a>三、screen命令使用方法？</h2><h3 id="1、常用的使用方法"><a href="#1、常用的使用方法" class="headerlink" title="1、常用的使用方法"></a>1、常用的使用方法</h3><p>用来解决文章开始我们遇到的问题，比如在安装lnmp时。</p>
+<h4 id="1-1-创建screen会话"><a href="#1-1-创建screen会话" class="headerlink" title="1.1 创建screen会话"></a>1.1 创建screen会话</h4><p>screen创建一个名字为lnmp的会话。 VPS侦探 <a target="_blank" rel="noopener" href="https://www.vpser.net/">https://www.vpser.net/</a>; 可以先执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -S lnmp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="1-2-暂时离开，保留screen会话中的任务或程序"><a href="#1-2-暂时离开，保留screen会话中的任务或程序" class="headerlink" title="1.2 暂时离开，保留screen会话中的任务或程序"></a>1.2 暂时离开，保留screen会话中的任务或程序</h4><p>当需要临时离开时（会话中的程序不会关闭，仍在运行）可以用快捷键Ctrl+a d(即按住Ctrl，依次再按a,d)</p>
+<h4 id="1-3-恢复screen会话"><a href="#1-3-恢复screen会话" class="headerlink" title="1.3 恢复screen会话"></a>1.3 恢复screen会话</h4><p>恢复到离开前创建的lnmp会话的工作界面,执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">aaaq lnmp <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果忘记了,或者当时没有指定会话名,列出当前存在的会话列表,可以执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -ls screen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>11791.lnmp即为刚才的screen创建的lnmp会话，目前已经暂时退出了lnmp会话，所以状态为Detached，当使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -r lnmp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>后状态就会变为Attached，11791是这个screen的会话的进程ID，恢复会话时也可以使用：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -r 11791<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="1-4-关闭screen的会话"><a href="#1-4-关闭screen的会话" class="headerlink" title="1.4 关闭screen的会话"></a>1.4 关闭screen的会话</h4><p>执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">exit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>会提示：[screen is terminating]，表示已经成功退出screen会话。VPS侦探 <a target="_blank" rel="noopener" href="https://www.vpser.net/">https://www.vpser.net/</a></p>
+<h4 id="1-5-删除会话"><a href="#1-5-删除会话" class="headerlink" title="1.5 删除会话"></a>1.5 删除会话</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -S session_name -X quit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>or</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -X -S 122128 quit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2、远程演示"><a href="#2、远程演示" class="headerlink" title="2、远程演示"></a>2、远程演示</h3><p>首先演示者先在服务器上执行:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -S test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建一个screen会话，观众可以链接到远程服务器上执行:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">screen -x test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>观众屏幕上就会出现和演示者同步。</p>
+<h3 id="3、常用快捷键"><a href="#3、常用快捷键" class="headerlink" title="3、常用快捷键"></a>3、常用快捷键</h3><h4 id="3-1-在当前screen会话中创建窗口"><a href="#3-1-在当前screen会话中创建窗口" class="headerlink" title="3.1 在当前screen会话中创建窗口"></a>3.1 在当前screen会话中创建窗口</h4><p>Ctrl+a c</p>
+<h4 id="3-2-窗口列表"><a href="#3-2-窗口列表" class="headerlink" title="3.2 窗口列表"></a>3.2 窗口列表</h4><p>Ctrl+a w</p>
+<h4 id="3-3-下一个窗口"><a href="#3-3-下一个窗口" class="headerlink" title="3.3 下一个窗口"></a>3.3 下一个窗口</h4><p>Ctrl+a n</p>
+<h4 id="3-4-上一个窗口"><a href="#3-4-上一个窗口" class="headerlink" title="3.4 上一个窗口"></a>3.4 上一个窗口</h4><p>Ctrl+a p</p>
+<h4 id="3-5-在第0个窗口和第9个窗口之间切换"><a href="#3-5-在第0个窗口和第9个窗口之间切换" class="headerlink" title="3.5 在第0个窗口和第9个窗口之间切换"></a>3.5 在第0个窗口和第9个窗口之间切换</h4><p>Ctrl+a 0-9<br>Ctrl+a 0-9<br><img src="Server_Screen/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Server_Screen/WX_QR_code.png" class="lozad post-image"></p>
+
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            Init
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://w383942470.github.io/2021/08/06/Server_Screen/">
+            https://w383942470.github.io/2021/08/06/Server_Screen/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2021/08/11/Hexo_Article/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">Hexo博客新建文章 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8screen%E5%91%BD%E4%BB%A4"><span class="toc-text">为什么要使用screen命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81screen%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">一、screen命令是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85screen%E5%91%BD%E4%BB%A4%EF%BC%9F"><span class="toc-text">二、如何安装screen命令？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81screen%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-text">三、screen命令使用方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">1、常用的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BAscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.1 创建screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%9A%82%E6%97%B6%E7%A6%BB%E5%BC%80%EF%BC%8C%E4%BF%9D%E7%95%99screen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F"><span class="toc-text">1.2 暂时离开，保留screen会话中的任务或程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%81%A2%E5%A4%8Dscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.3 恢复screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%85%B3%E9%97%ADscreen%E7%9A%84%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.4 关闭screen的会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%88%A0%E9%99%A4%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.5 删除会话</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BF%9C%E7%A8%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">2、远程演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">3、常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9C%A8%E5%BD%93%E5%89%8Dscreen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.1 在当前screen会话中创建窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%AA%97%E5%8F%A3%E5%88%97%E8%A1%A8"><span class="toc-text">3.2 窗口列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.3 下一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.4 上一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E5%9C%A8%E7%AC%AC0%E4%B8%AA%E7%AA%97%E5%8F%A3%E5%92%8C%E7%AC%AC9%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2"><span class="toc-text">3.5 在第0个窗口和第9个窗口之间切换</span></a></li></ol></li></ol></li></ol>
+</div></main>
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">Init</p>
+<p class="author-description">王富贵的日常学习小结~</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>7</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>3</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>11</span>
+    <span>标签</span>
+  </a>
+</div>
+
+  <div class="author-card-society">
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="https://github.com/w383942470">
+          <i class="iconfont iconfont society-icon icon-github society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a href="mailto:w383942470@163.com">
+          <i class="iconfont iconfont society-icon icon-mail society-icon"></i>
+        </a>
+      </div>
+    
+      <div class="author-card-society-icon">
+        <a target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=383942470&amp;site=qq&amp;menu=yes">
+          <i class="iconfont iconfont society-icon icon-wechat society-icon"></i>
+        </a>
+      </div>
+    
+  </div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8screen%E5%91%BD%E4%BB%A4"><span class="toc-text">为什么要使用screen命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81screen%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">一、screen命令是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85screen%E5%91%BD%E4%BB%A4%EF%BC%9F"><span class="toc-text">二、如何安装screen命令？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81screen%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-text">三、screen命令使用方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">1、常用的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BAscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.1 创建screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%9A%82%E6%97%B6%E7%A6%BB%E5%BC%80%EF%BC%8C%E4%BF%9D%E7%95%99screen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F"><span class="toc-text">1.2 暂时离开，保留screen会话中的任务或程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%81%A2%E5%A4%8Dscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.3 恢复screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%85%B3%E9%97%ADscreen%E7%9A%84%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.4 关闭screen的会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%88%A0%E9%99%A4%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.5 删除会话</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BF%9C%E7%A8%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">2、远程演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">3、常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9C%A8%E5%BD%93%E5%89%8Dscreen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.1 在当前screen会话中创建窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%AA%97%E5%8F%A3%E5%88%97%E8%A1%A8"><span class="toc-text">3.2 窗口列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.3 下一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.4 上一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E5%9C%A8%E7%AC%AC0%E4%B8%AA%E7%AA%97%E5%8F%A3%E5%92%8C%E7%AC%AC9%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2"><span class="toc-text">3.5 在第0个窗口和第9个窗口之间切换</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/">
+        <div class="categories-list-item">
+          测试相关
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/WEB%E5%89%8D%E7%AB%AF/">
+        <div class="categories-list-item">
+          WEB前端
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        <div class="categories-list-item">
+          服务器
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%8D%9A%E5%AE%A2/" 
+        title="博客">
+        <div class="tags-list-item">博客</div>
+      </a>
+    
+      <a 
+        href="/tags/Hexo/" 
+        title="Hexo">
+        <div class="tags-list-item">Hexo</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" 
+        title="测试文档">
+        <div class="tags-list-item">测试文档</div>
+      </a>
+    
+      <a 
+        href="/tags/%E9%83%A8%E7%BD%B2/" 
+        title="部署">
+        <div class="tags-list-item">部署</div>
+      </a>
+    
+      <a 
+        href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" 
+        title="自动化测试">
+        <div class="tags-list-item">自动化测试</div>
+      </a>
+    
+      <a 
+        href="/tags/selenium/" 
+        title="selenium">
+        <div class="tags-list-item">selenium</div>
+      </a>
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" 
+        title="定时任务">
+        <div class="tags-list-item">定时任务</div>
+      </a>
+    
+      <a 
+        href="/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" 
+        title="测试工具">
+        <div class="tags-list-item">测试工具</div>
+      </a>
+    
+      <a 
+        href="/tags/Fiddler/" 
+        title="Fiddler">
+        <div class="tags-list-item">Fiddler</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8screen%E5%91%BD%E4%BB%A4"><span class="toc-text">为什么要使用screen命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81screen%E5%91%BD%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">一、screen命令是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85screen%E5%91%BD%E4%BB%A4%EF%BC%9F"><span class="toc-text">二、如何安装screen命令？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81screen%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-text">三、screen命令使用方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">1、常用的使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%88%9B%E5%BB%BAscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.1 创建screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%9A%82%E6%97%B6%E7%A6%BB%E5%BC%80%EF%BC%8C%E4%BF%9D%E7%95%99screen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F"><span class="toc-text">1.2 暂时离开，保留screen会话中的任务或程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%81%A2%E5%A4%8Dscreen%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.3 恢复screen会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%85%B3%E9%97%ADscreen%E7%9A%84%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.4 关闭screen的会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%88%A0%E9%99%A4%E4%BC%9A%E8%AF%9D"><span class="toc-text">1.5 删除会话</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BF%9C%E7%A8%8B%E6%BC%94%E7%A4%BA"><span class="toc-text">2、远程演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">3、常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9C%A8%E5%BD%93%E5%89%8Dscreen%E4%BC%9A%E8%AF%9D%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.1 在当前screen会话中创建窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%AA%97%E5%8F%A3%E5%88%97%E8%A1%A8"><span class="toc-text">3.2 窗口列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.3 下一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3"><span class="toc-text">3.4 上一个窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E5%9C%A8%E7%AC%AC0%E4%B8%AA%E7%AA%97%E5%8F%A3%E5%92%8C%E7%AC%AC9%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2"><span class="toc-text">3.5 在第0个窗口和第9个窗口之间切换</span></a></li></ol></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-30</div>
+        <a href="/2021/08/30/Fiddler-Proxy/"><div class="recent-posts-item-content">Fiddler抓包工具使用及配置</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-25</div>
+        <a href="/2021/08/25/Submit-Test/"><div class="recent-posts-item-content">软件测试质量保障之开发提测</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-13</div>
+        <a href="/2021/08/13/Python-Selenium/"><div class="recent-posts-item-content">Python+Selenium 调起浏览器</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2021-08-12</div>
+        <a href="/2021/08/12/Linux-Crontab/"><div class="recent-posts-item-content">Linux中的定时任务(crontab)</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020 -
+          
+          2021
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          王富贵 · BLOG
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+      <div class="footer-dsc">
+        
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          本站总访客数<span id="busuanzi_value_site_uv"></span>次
+        
+      </div>
+      
+    
+</footer> 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+    
+      <script> 
+        loadScript('/js/lib/busuanzi.min.js') 
+      </script>
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+     
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
