@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Init的个人博客
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Init
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://w383942470.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,16 +45,18 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: flase
-prismjs:
   enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
   preprocess: true
   line_number: true
   tab_replace: ''
-prism_plugin:
-  mode: 'preprocess' # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true # default false
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -100,4 +103,6 @@ theme: kaze
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/w383942470/w383942470.github.io.git
+  branch: master
