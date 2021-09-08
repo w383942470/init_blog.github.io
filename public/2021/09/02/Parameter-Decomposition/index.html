@@ -321,7 +321,7 @@
     
     
       <span class="dot"></span>
-      <span>91 字</span>
+      <span>106 字</span>
     
   </div>
   
@@ -348,21 +348,21 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="python分解url中的参数"><a href="#python分解url中的参数" class="headerlink" title="python分解url中的参数"></a>python分解url中的参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>parse <span class="token keyword">as</span> urlparse
+    <h2 id="python分解url中的参数"><a href="#python分解url中的参数" class="headerlink" title="python分解url中的参数"></a>python分解url中的参数</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">import urllib.parse as urlparse
 
-url <span class="token operator">=</span> <span class="token string">'http://service.weibo.com/share/share.php?title=财联社9月2日电，英国报告新增38154例新冠肺炎确诊病例，新增178例死亡病例。 &amp;amp;url=https://www.cls.cn/detail/827698&amp;amp;searchPic=false'</span>
+url &#x3D; &#39;http:&#x2F;&#x2F;service.weibo.com&#x2F;share&#x2F;share.php?title&#x3D;财联社9月2日电，英国报告新增38154例新冠肺炎确诊病例，新增178例死亡病例。 &amp;url&#x3D;https:&#x2F;&#x2F;www.cls.cn&#x2F;detail&#x2F;827698&amp;searchPic&#x3D;false&#39;
 
-parsed <span class="token operator">=</span> urlparse<span class="token punctuation">.</span>urlparse<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+parsed &#x3D; urlparse.urlparse(url)
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>parsed<span class="token punctuation">)</span>
+print(parsed)
 
-querys <span class="token operator">=</span> urlparse<span class="token punctuation">.</span>parse_qs<span class="token punctuation">(</span>parsed<span class="token punctuation">.</span>query<span class="token punctuation">)</span>
+querys &#x3D; urlparse.parse_qs(parsed.query)
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>querys<span class="token punctuation">)</span>
+print(querys)
 
-querys <span class="token operator">=</span> <span class="token punctuation">&#123;</span>k<span class="token punctuation">:</span> v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> querys<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
+querys &#x3D; &#123;k: v[0] for k, v in querys.items()&#125;
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>querys<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+print(querys)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="Parameter-Decomposition/result.jpg" alt="结果" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Parameter-Decomposition/result.jpg" class="lozad post-image"><br><img src="Parameter-Decomposition/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Parameter-Decomposition/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
