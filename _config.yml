@@ -45,21 +45,17 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
-prism_plugin:
-  mode: 'preprocess' # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false # default false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -110,3 +106,9 @@ deploy:
   type: git
   repository: https://github.com/w383942470/w383942470.github.io.git
   branch: master
+
+baidu_url_submit:
+  count: 100                 # 提交最新的多少个链接
+  host: w383942470.github.io/       # 在百度站长平台中添加的域名
+  token: sDENwZ3YQslQ4y5x                    # 秘钥
+  path: baidu_urls.txt
