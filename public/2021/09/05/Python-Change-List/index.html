@@ -45,7 +45,7 @@
         content="2021-09-05">
       <meta 
         property="og:article:modified_time" 
-        content="2021-09-07">
+        content="2021-10-11">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -321,7 +321,7 @@
     
     
       <span class="dot"></span>
-      <span>102 字</span>
+      <span>91 字</span>
     
   </div>
   
@@ -350,18 +350,18 @@
     class="post-content">
     <h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><div class="post-note note-info"><p>假设已有一个list为[‘dog’, ‘pig’, ‘cat’, ‘mouse’]，需求是将该列表随机打乱</p></div>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><div class="post-note note-info"><p>使用python随机函数random，调用random中的shuffle方法，将需要打乱的列表作为参数传递</p></div>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import random
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> random
 
-demo_list &#x3D; [&#39;dog&#39;, &#39;pig&#39;, &#39;cat&#39;, &#39;mouse&#39;]
+demo_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'pig'</span><span class="token punctuation">,</span> <span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'mouse'</span><span class="token punctuation">]</span>
 
-print(demo_list)
-print(&#39;------------------------------&#39;)
+<span class="token keyword">print</span><span class="token punctuation">(</span>demo_list<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'------------------------------'</span><span class="token punctuation">)</span>
 
-# 循环打印十次看随机后的列表
-for i in range(0, 10):
-    random.shuffle(demo_list)
-    print(demo_list)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="Python-Change-List/show_result.jpg" alt="结果展示" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Python-Change-List/show_result.jpg" class="lozad post-image"><br><img src="Python-Change-List/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Python-Change-List/WX_QR_code.png" class="lozad post-image"></p>
+<span class="token comment"># 循环打印十次看随机后的列表</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>demo_list<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>demo_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2021/09/05/Python-Change-List/show_result.jpg" alt="结果展示" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/09/05/Python-Change-List/show_result.jpg" class="lozad post-image"><br><img src="/2021/09/05/Python-Change-List/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/09/05/Python-Change-List/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
