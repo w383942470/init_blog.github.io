@@ -109,6 +109,6 @@ deploy:
 
 baidu_url_submit:
   count: 100                 # 提交最新的多少个链接
-  host: w383942470.github.io/       # 在百度站长平台中添加的域名
+  host: init888.cn       # 在百度站长平台中添加的域名
   token: sDENwZ3YQslQ4y5x                    # 秘钥
   path: baidu_urls.txt

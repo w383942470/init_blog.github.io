@@ -86,7 +86,7 @@ footer:
   #------------------------
   # Record config
   # please put the gov image in ${yoursite}/img/beian.png
-  RecordInfo: "" # your Record info such as '某ICP备xxx号'
+  RecordInfo: "赣ICP备2021008895号-1" # your Record info such as '某ICP备xxx号'
   govRecordInfo: "" # your gov record info such as '某公网安备xxx号'
   govRecordUrl: "" # your gov record url
   #------------------------
