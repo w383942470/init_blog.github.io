@@ -8,4 +8,4 @@ categories: 日常问题
 ```bash
 git push origin 分支名 --force
 ```
-![添加微信](Git-OverlayRemoteCode/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

@@ -65,4 +65,4 @@ yield from -> await
 ```
 Python3.8之后 @asyncio.coroutine 装饰器就会被移除，推荐使用async & await 关键字实现协程代码。
 {% endnote %}
-![添加微信](Python-asyncio/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

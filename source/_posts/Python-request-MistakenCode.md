@@ -17,4 +17,4 @@ res.encoding = 'gb2312'
 
 print(res.text)
 ```
-![添加微信](Python-request-MistakenCode/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

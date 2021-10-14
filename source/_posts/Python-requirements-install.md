@@ -18,4 +18,4 @@ pip install -r modules.txt
 {% note success %}
 接下来就只需要耐心等待安装完成，然后启动项目就好啦~
 {% endnote %}
-![添加微信](Python-requirements-install/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

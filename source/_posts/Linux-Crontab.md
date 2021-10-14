@@ -71,4 +71,4 @@ crontab -r
 ``` bash
 15,30 8-9 * * 3 python main.py
 ```
-![添加微信](Linux-Crontab/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

@@ -19,4 +19,4 @@ page_html = BeautifulSoup(html, 'lxml')
 
 print(page_html.text)
 ```
-![添加微信](Python-Bs4-RemoveLabel/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

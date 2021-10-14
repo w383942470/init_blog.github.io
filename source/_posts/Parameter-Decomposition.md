@@ -23,4 +23,4 @@ querys = {k: v[0] for k, v in querys.items()}
 print(querys)
 ```
 ![结果](Parameter-Decomposition/result.jpg)
-![添加微信](Parameter-Decomposition/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

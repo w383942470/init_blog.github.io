@@ -2,8 +2,8 @@
 # Header config
 title: 王富贵 · BLOG
 author: Init
-logo_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-author_img: https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220
+logo_img: http://init-blog.init888.cn/user/init_wangfugui.jpg # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
+author_img: http://init-blog.init888.cn/user/init_wangfugui.jpg
 author_description: 王富贵的日常学习小结~
 #------------------------
 # Navbar config
@@ -30,15 +30,15 @@ about:
 links:
    QQ:
      url:  http://wpa.qq.com/msgrd?v=3&uin=383942470&site=qq&menu=yes
-     avatar: https://gdown.baidu.com/img/0/512_512/db9d059f00be7af84d97435bcb85d568.png
+     avatar: https://init-blog.init888.cn/index/QQ.png
      description: QQ：383942470
    微信:
      url:
-     avatar: https://gdown.baidu.com/img/0/512_512/aaf27d029984e6d43ae57537e2dfc738.jpg
+     avatar: http://init-blog.init888.cn/index/WX.png
      description: 微信：wy999999987
    邮箱:
      url: mailto:w383942470@163.com
-     avatar: http://gdown.baidu.com/img/0/512_512/c0589e82bc080fcb350df38c2d86df42.png
+     avatar: http://init-blog.init888.cn/index/Email.png
      description: 邮箱：383942470@qq.com
   #------------------------
   # tip: if you want to use QQ avatar without giving away your QQ number,
@@ -88,7 +88,7 @@ footer:
   # please put the gov image in ${yoursite}/img/beian.png
   RecordInfo: "赣ICP备2021008895号-1" # your Record info such as '某ICP备xxx号'
   govRecordInfo: "" # your gov record info such as '某公网安备xxx号'
-  govRecordUrl: "" # your gov record url
+  govRecordUrl: "https://beian.miit.gov.cn/#/Integrated/index" # your gov record url
   #------------------------
   # pv / uv statistics config
   #------------------------

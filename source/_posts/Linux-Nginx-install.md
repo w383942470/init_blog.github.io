@@ -191,4 +191,4 @@ http {
 {% note success %}
 每次编辑完nginx.conf文件后都必须重启nginx
 {% endnote %}
-![添加微信](Linux-Nginx-install/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

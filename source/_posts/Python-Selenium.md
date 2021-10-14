@@ -117,4 +117,4 @@ search.click()
 {% note success %}
 以上就完成了简单的python调起浏览器操作~如果其他问题欢迎联系交流，或者参考[中文官方文档](https://python-selenium-zh.readthedocs.io/zh_CN/latest/)
 {% endnote %}
-![添加微信](Python-Selenium/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

@@ -73,4 +73,4 @@ pip3 -V
 {% note success %}
 以上即安装全过程，全程顺畅无阻，完美安装~
 {% endnote %}
-![添加微信](Linux-Python-Install/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

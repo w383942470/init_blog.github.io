@@ -26,4 +26,4 @@ for i in range(0, 10):
     print(demo_list)
 ```
 ![结果展示](Python-Change-List/show_result.jpg)
-![添加微信](Python-Change-List/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

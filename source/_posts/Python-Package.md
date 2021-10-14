@@ -34,4 +34,4 @@ pyinstaller -F main.py
 12781 INFO: Building EXE from EXE-00.toc completed successfully.
 ```
 打包完成后，在当前文件夹下会生成一个dist及build文件夹，在dist文件夹下就可以看到刚刚我们打包所生成的exe文件，接下来双击即可运行
-![添加微信](Python-Package/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)

@@ -17,4 +17,4 @@ title = pattern.sub('', html)
 
 print(title)
 ```
-![添加微信](Python-Re-RemoveHtml/WX_QR_code.png)
+![添加微信](https://init-blog.init888.cn/post/common/WX_QR_code.png)
