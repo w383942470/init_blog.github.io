@@ -17,7 +17,7 @@
     content="Init的个人博客">
   <link 
     rel="icon" 
-    href="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+    href="http://init-blog.init888.cn/user/init_wangfugui.jpg">
   <title>Python+Selenium 调起浏览器</title>
   
     
@@ -33,7 +33,7 @@
     
       <meta 
         property="og:img" 
-        content="https://img1.baidu.com/it/u=2154713465,3315075861&amp;fm=253&amp;app=138&amp;f=JPEG?w=220&amp;h=220">
+        content="http://init-blog.init888.cn/user/init_wangfugui.jpg">
     
     
     
@@ -45,7 +45,7 @@
         content="2021-08-13">
       <meta 
         property="og:article:modified_time" 
-        content="2021-09-03">
+        content="2021-10-14">
       <meta 
         property="og:article:author" 
         content="Init">
@@ -217,7 +217,7 @@
           class="navbar-logo-img"
           width="32"
           height="32"
-          src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+          src="http://init-blog.init888.cn/user/init_wangfugui.jpg" 
           alt="blog logo">
       
       <span class="navbar-logo-dsc">王富贵 · BLOG</span>
@@ -374,7 +374,7 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="一、什么是Selenium？"><a href="#一、什么是Selenium？" class="headerlink" title="一、什么是Selenium？"></a>一、什么是Selenium？</h2><p><font color=red>Selenium</font>是一个用于Web应用程序测试的工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7, 8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera，Edge等。这个工具的主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。测试系统功能——创建回归测试检验软件功能和用户需求。支持自动录制动作和自动生成 .Net、Java、Perl等不同语言的测试脚本。</p>
+    <h2 id="一、什么是Selenium？"><a href="#一、什么是Selenium？" class="headerlink" title="一、什么是Selenium？"></a>一、什么是Selenium？</h2><p><font color="red">Selenium</font>是一个用于Web应用程序测试的工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7, 8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera，Edge等。这个工具的主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。测试系统功能——创建回归测试检验软件功能和用户需求。支持自动录制动作和自动生成 .Net、Java、Perl等不同语言的测试脚本。</p>
 <h2 id="二、安装Selenium"><a href="#二、安装Selenium" class="headerlink" title="二、安装Selenium"></a>二、安装Selenium</h2><h3 id="1-下载python的selenium安装包"><a href="#1-下载python的selenium安装包" class="headerlink" title="1. 下载python的selenium安装包"></a>1. 下载python的selenium安装包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> selenium<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="2-Windows下下载与浏览器版本相对应的webdriver"><a href="#2-Windows下下载与浏览器版本相对应的webdriver" class="headerlink" title="2. Windows下下载与浏览器版本相对应的webdriver"></a>2. Windows下下载与浏览器版本相对应的webdriver</h3><p>chrom浏览器的web driver</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">http://npm.taobao.org/mirrors/chromedriver/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -423,7 +423,7 @@ driver<span class="token punctuation">.</span>find_element_by_css_selector<span 
 <h4 id="3-2-使用以上方法定位百度输入框"><a href="#3-2-使用以上方法定位百度输入框" class="headerlink" title="3.2 使用以上方法定位百度输入框"></a>3.2 使用以上方法定位百度输入框</h4><div class="post-note note-info"><p>打开百度，选中输入框，可以看到输入框有id也有name，那么在查找元素的时候就可以根据id或name来定位</p></div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 将定位到的输入框对象赋值给word_input变量</span>
 word_input <span class="token operator">=</span> driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">'kw'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><img src="Python-Selenium/Find_element_baidu.jpg" alt="查找元素" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Python-Selenium/Find_element_baidu.jpg" class="lozad post-image"></p>
+<p><img src="/2021/08/13/Python-Selenium/Find_element_baidu.jpg" alt="查找元素" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2021/08/13/Python-Selenium/Find_element_baidu.jpg" class="lozad post-image"></p>
 <h4 id="3-3-将关键词输入"><a href="#3-3-将关键词输入" class="headerlink" title="3.3 将关键词输入"></a>3.3 将关键词输入</h4><div class="post-note note-info"><p>为了防止在输入之前输入框中有内容，影响输入结果，在输入前先试用clean方法清空输入框</p></div>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 定义需要输入的关键词变量</span>
 key_word <span class="token operator">=</span> <span class="token string">'selenium'</span>
@@ -435,7 +435,7 @@ word_input<span class="token punctuation">.</span>send_keys<span class="token pu
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">search <span class="token operator">=</span> driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">'s_kw_wrap'</span><span class="token punctuation">)</span>
 search<span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <div class="post-note note-success"><p>以上就完成了简单的python调起浏览器操作~如果其他问题欢迎联系交流，或者参考<a target="_blank" rel="noopener" href="https://python-selenium-zh.readthedocs.io/zh_CN/latest/">中文官方文档</a></p></div>
-<p><img src="Python-Selenium/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="Python-Selenium/WX_QR_code.png" class="lozad post-image"></p>
+<p><img src="https://init-blog.init888.cn/post/common/WX_QR_code.png" alt="添加微信" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://init-blog.init888.cn/post/common/WX_QR_code.png" class="lozad post-image"></p>
 
   </div>
   <div>
@@ -513,7 +513,7 @@ search<span class="token punctuation">.</span>click<span class="token punctuatio
               <div class="card card-author">
                 
   <img 
-    src="https://img1.baidu.com/it/u=2154713465,3315075861&fm=253&app=138&f=JPEG?w=220&h=220" 
+    src="http://init-blog.init888.cn/user/init_wangfugui.jpg" 
     class="author-img"
     width="88"
     height="88"
